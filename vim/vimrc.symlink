@@ -1,4 +1,55 @@
-syntax on
+" setup pathogen for vim plugins
+execute pathogen#infect()
+call pathogen#helptags()
 
-" Wrap gitcommit file types at the appropriate length
-filetype indent plugin on
+"colorscheme elflord
+set number
+
+filetype plugin indent on
+
+
+" vim-colors-solarized settings
+syntax enable
+
+" use solarized for GVim, and elflord in console vim
+if has('gui_running')
+    set background=dark
+    colorscheme solarized
+else
+    colorscheme elflord
+endif
+
+" TagBar toggle
+noremap <leader>l :TagbarToggle<CR>
+
+" allow markdown syntax
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
+" tab setting to 4 spaces 
+set smartindent
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+" neocomplcache (autocompletion)
+let g:neocomplcache_enable_at_startup = 1
+
+" NERDTreeToggling
+noremap <C-E> :NERDTreeToggle<CR>
+
+" for command mode (Shift+TAB action)
+nmap <S-Tab> <<
+" for insert mode (shift+tab action)
+imap <S-Tab> <Esc><<i
+
+" Git commands (fugitive plugin)
+noremap <leader>gs :Gstatus<CR>
+noremap <leader>gd :Gdiff<CR>
+noremap <leader>gc :Gcommit<CR>
+noremap <leader>gb :Gblame<CR>
+noremap <leader>gl :Glog<CR>
+noremap <leader>gp :Gpush<CR>
+
+
+
+
