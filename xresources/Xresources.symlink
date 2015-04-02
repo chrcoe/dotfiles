@@ -75,6 +75,9 @@ URxvt*scrollBar:	false
 URxvt*font:        -xos4-terminus-medium-*-*-*-32-*-*-*-*-*-*-*
 ! URxvt*font:		xft:Terminus:32
 
+URxvt.depth:        32
+URxvt.background:   [85]#002b36
+
 ! URxvt*termName:                       string
 ! URxvt*geometry:                       geometry
 ! URxvt*chdir:                          string
