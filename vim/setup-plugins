@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# installs pathogen and downloads plugins as listed here
+
+mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+
+# install plugins
+cd ~/.vim/bundle
+git clone https://github.com/Shougo/neocomplcache.vim
+git clone https://github.com/scrooloose/nerdtree
+sudo yum install ctags -y
+git clone https://github.com/majutsushi/tagbar
+git clone https://github.com/kien/ctrlp.vim
+git clone https://github.com/nathanaelkane/vim-indent-guides
+sudo yum install astyle python-autopep8 -y
+git clone https://github.com/Chiel92/vim-autoformat
+git clone https://github.com/junegunn/goyo.vim
+
