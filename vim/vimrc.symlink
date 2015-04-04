@@ -45,6 +45,7 @@ nnoremap <leader>df :Goyo<CR>
 
 if has('gui_running')
 "	set guifont=Lucida_Console:h10
+	set guifont=Terminus\ 12
 	set background=dark
 	colorscheme solarized
 	set lines=999 columns=120
