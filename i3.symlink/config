@@ -186,7 +186,8 @@ bindsym XF86MonBrightnessDown exec xbacklight - 5
 bindsym XF86AudioMute exec --no-startup-id $HOME/.i3/soundtoggle.sh
 bindsym XF86AudioRaiseVolume exec --no-startup-id $HOME/.i3/soundraise.sh
 bindsym XF86AudioLowerVolume exec --no-startup-id $HOME/.i3/soundlower.sh
-bindsym XF86AudioMicMute exec --no-startup-id amixer -c 1 -q set Mic toggle # not currently working
+#bindsym XF86AudioMicMute exec --no-startup-id amixer -c 1 -q set Mic toggle # 'Mic' here means playback of mic through speakers
+bindsym XF86AudioMicMute exec --no-startup-id amixer -c 1 -q set Capture toggle
 # Touchpad Toggle
 bindsym $mod+Shift+m exec --no-startup-id $HOME/.i3/touchpadtoggle.sh
 # power off with one touch power button
