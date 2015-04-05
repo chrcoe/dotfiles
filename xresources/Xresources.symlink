@@ -47,6 +47,10 @@ URxvt.intensityStyles: 		false
 
 *background:              S_base03
 *foreground:              S_base0
+! transparency in i3 settings
+URxvt.transparent:      true
+URxvt.shading:          90
+
 URxvt*fading:                  40
 URxvt*fadeColor:               S_base03
 URxvt.tintColor:	S_base03
