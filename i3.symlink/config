@@ -172,6 +172,8 @@ bar {
         font pango:Terminus 10
         position top
         status_command i3status
+        #mode hide
+        #modifer $mod
 }
 # Lenovo keyboard assignments
 # brightness up/down
