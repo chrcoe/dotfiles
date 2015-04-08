@@ -77,7 +77,8 @@ URxvt*color14:                 S_base1
 URxvt*color15:                 S_base3
 
 URxvt*scrollBar:	false
-URxvt*font:        -xos4-terminus-medium-*-*-*-32-*-*-*-*-*-*-*
+URxvt*font:    xft:Terminus:pixelsize=32,xft:Inconsolata\ for\ Powerline:pixelsize=32
+! URxvt*font:        -xos4-terminus-medium-*-*-*-32-*-*-*-*-*-*-*
 ! URxvt*font:		xft:Terminus:32
 
 URxvt.depth:        32
