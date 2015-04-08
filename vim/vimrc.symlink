@@ -9,8 +9,23 @@ set exrc
 set secure
 
 "----------------------------------------------------------------
-" neocomplcache settings
-let g:neocomplcache_enable_at_startup = 1
+" neocomplete settings
+
+" from here: https://github.com/Shougo/neocomplete.vim/issues/302
+let g:neocomplete#enable_at_startup = 1
+autocmd FileType python setlocal omnifunc=jedi#completions
+let g:jedi#completions_enabled = 0
+let g:jedi#auto_vim_configuration = 0
+if !exists('g:neocomplete#force_omni_input_patterns')
+    let g:neocomplete#force_omni_input_patterns = {}
+endif
+let g:neocomplete#force_omni_input_patterns.python = '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
+
+" let g:neocomplete#enable_at_startup = 1
+" let g:jedi#popup_select_first = 0
+" let g:neocomplete#enable_auto_select = 0
+" let g:jedi#auto_vim_configuration = 0
+" let g:jedi#completions_enabled=0
 
 "----------------------------------------------------------------
 " NERDTree settings
