@@ -36,6 +36,7 @@ map <C-E> :NERDTreeToggle<CR>
 if has('win64') || has('win32') || has('win32unix')
     nmap <leader>l :echom "****Tagbar not setup on Windows yet in this config!****"<CR>
 else
+    let g:tagbar_autofocus = 1
     nmap <leader>l :TagbarToggle<CR>
 endif
 
@@ -71,6 +72,12 @@ if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 let g:airline_symbols.space = "\ua0"
+
+" "----------------------------------------------------------------
+" " tasklist (open with <leader> t or call :TaskList<CR>)
+" let g:tlWindowPosition = 1 " open at bottom
+" let g:tlTokenList = "FIXME TODO DEBUG ADDFEATURE"
+" let g:tlRememberPosition = 1 " try to find most recent location
 
 "----------------------------------------------------------------
 " Python-mode
