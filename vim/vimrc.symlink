@@ -37,7 +37,8 @@ if has('win64') || has('win32') || has('win32unix')
     nmap <leader>l :echom "****Tagbar not setup on Windows yet in this config!****"<CR>
 else
     let g:tagbar_autofocus = 1
-    nmap <leader>l :TagbarToggle<CR>
+    nmap <leader>l :TagbarOpenAutoClose<CR>
+    " nmap <leader>l :TagbarToggle<CR>
 endif
 
 "----------------------------------------------------------------
