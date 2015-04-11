@@ -1,2 +1,2 @@
 alias reload!='. ~/.zshrc'
-alias open='gvfs-open'
+alias open='xdg-open'
