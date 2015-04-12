@@ -2,6 +2,14 @@
 !
 ! http://ethanschoonover.com/solarized
 
+! Font DPI setting:
+! for scaled (1.75), use 168
+! else use 96 (scaling 1.0)
+
+#define DPI 96
+!#define DPI 168 
+
+
 
 ! Common
 
@@ -26,23 +34,6 @@
 #define S_base2         #eee8d5
 #define S_base3         #fdf6e3
 
-
-! Light
-
-! #define S_base03        #fdf6e3
-! #define S_base02        #eee8d5
-! #define S_base01        #93a1a1
-! #define S_base00        #839496
-! #define S_base0         #657b83
-! #define S_base1         #586e75
-! #define S_base2         #073642
-! #define S_base3         #002b36
-
-
-! To only apply colors to your terminal, for example, prefix
-! the color assignment statement with its name. Example:
-!
-! URxvt*background:            S_base03
 
 URxvt.intensityStyles: 		false
 URxvt*background:              S_base03
@@ -77,12 +68,25 @@ URxvt*color14:                 S_base1
 URxvt*color15:                 S_base3
 
 URxvt*scrollBar:	false
-URxvt*font:    xft:Terminus:pixelsize=32,xft:Inconsolata\ for\ Powerline:pixelsize=32
-! URxvt*font:        -xos4-terminus-medium-*-*-*-32-*-*-*-*-*-*-*
-! URxvt*font:		xft:Terminus:32
+
+!-*-{ Xft settings
+Xft*dpi:       DPI
+Xft*antialias: True
+Xft*hinting:   Full
+!!-*-}
+
+!URxvt*font:    xft:Terminus:pixelsize=14,xft:Inconsolata\ for\ Powerline:pixelsize=14
+URxvt*font:    xft:Terminus,xft:Inconsolata\ for\ Powerline
+! !URxvt*font:    xft:Terminus:pixelsize=14,xft:Inconsolata\ for\ Powerline:pixelsize=14
+! URxvt*font:    xft:Terminus:pixelsize=30,xft:Inconsolata\ for\ Powerline:pixelsize=30
 
 URxvt.depth:        32
 URxvt.background:   [90]#002b36
+
+! URL Handling:
+! requires a perl module to be installed
+URxvt.url-launcher:   /usr/bin/chromium-dev --force-device-scale-factor=2
+URxvt.underlineURLs:  True
 
 ! URxvt*termName:                       string
 ! URxvt*geometry:                       geometry

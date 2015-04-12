@@ -144,7 +144,7 @@
 #
 #    ALSADevice=tee:hw,'/tmp/out.wav',wav
 #
-#ALSADevice = default
+ALSADevice = default
 #ALSAMixer1 = PCM
 #ALSAMixer2 = Master
 
