@@ -159,6 +159,13 @@ set expandtab
 
 set nowrap
 
+" ideas from Damian Conway (OSCON 2013):
+" https://www.youtube.com/watch?v=aHm36-na4-4
+
 " whitespace characters
-set listchars=tab:>-,nbsp:_,trail:.
+"set listchars=tab:>-,nbsp:_,trail:.
+exec "set listchars=tab:\uBB\uBB,nbsp:_,trail:\uB7"
 set list
+
+" get rid of shift ; to get to : commands
+nnoremap ; :
