@@ -35,7 +35,7 @@
 #define S_base3         #fdf6e3
 
 
-URxvt.intensityStyles: 		false
+URxvt.intensityStyles:         false
 URxvt*background:              S_base03
 URxvt*foreground:              S_base0
 ! transparency in i3 settings
@@ -44,7 +44,7 @@ URxvt.shading:          90
 
 URxvt*fading:                  40
 URxvt*fadeColor:               S_base03
-URxvt.tintColor:	S_base03
+URxvt.tintColor:               S_base03
 URxvt*cursorColor:             S_base1
 URxvt*pointerColorBackground:  S_base01
 URxvt*pointerColorForeground:  S_base1
@@ -67,7 +67,7 @@ URxvt*color13:                 S_violet
 URxvt*color14:                 S_base1
 URxvt*color15:                 S_base3
 
-URxvt*scrollBar:	false
+URxvt*scrollBar:               false
 
 !-*-{ Xft settings
 Xft*dpi:       DPI
