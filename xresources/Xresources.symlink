@@ -6,8 +6,8 @@
 ! for scaled (1.75), use 168
 ! else use 96 (scaling 1.0)
 
-#define DPI 96
-!#define DPI 168
+!#define DPI 96
+#define DPI 168
 
 
 

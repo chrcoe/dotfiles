@@ -136,7 +136,9 @@ let g:pymode_folding = 0
 " let g:jedi#rename_command = "<leader>r"  
 let g:pymode_rope_completion = 0
 
-
+"----------------------------------------------------------------
+" NERDCommentor add additional space after comment characters.
+let NERDSpaceDelims=1
 
 set background=dark
 colorscheme solarized
