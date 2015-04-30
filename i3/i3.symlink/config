@@ -134,6 +134,8 @@ bindsym $mod+Shift+0 move container to workspace 10
 
 # auto assignments for specific programs
 assign [class="^Firefox$"] → $tag1
+assign [class="^Chromium-dev$"] → $tag1
+assign [instance="^weechat$"] → $tag5
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
