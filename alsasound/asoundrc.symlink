@@ -1,7 +1,7 @@
 pcm.!default {
         type hw
         card 1
-        #card 2
+        # card 2
 }
 
 # pcm.!dock {
@@ -12,7 +12,7 @@ pcm.!default {
 ctl.!default {
         type hw
         card 1
-        #card 2
+        # card 2
 }
 
 # ctl.!dock {
