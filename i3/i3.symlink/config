@@ -197,6 +197,7 @@ bindsym XF86AudioMicMute exec --no-startup-id amixer -c 1 -q set Capture toggle
 bindsym $mod+Shift+m exec --no-startup-id $HOME/.i3/touchpadtoggle.sh
 # power off with one touch power button
 bindsym XF86PowerOff exec shutdown now # not currently working
+bindsym XF86Search exec xsel -o # paste from search button on mx mouse
 
 # NetworkManager applet integration
 exec --no-startup-id nm-applet
