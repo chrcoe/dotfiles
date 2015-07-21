@@ -1,5 +1,5 @@
-#define DPI 96
-! #define DPI 168
+! #define DPI 96
+#define DPI 168
 
 ! Font DPI setting:
 ! for scaled (1.75), use 168
