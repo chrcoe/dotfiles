@@ -128,8 +128,11 @@ let g:pymode_breakpoint_bind = '<leader>b'
 " 
 " " autofold code
 let g:pymode_folding = 1
-" 
-" 
+
+" " VIM motion support for python
+let g:pymode_motion = 1
+
+
 "----------------------------------------------------------------
 " Jedi-vim
 "

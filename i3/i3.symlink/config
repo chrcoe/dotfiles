@@ -203,3 +203,6 @@ bindsym XF86Search exec xsel -o # paste from search button on mx mouse
 exec --no-startup-id nm-applet
 # Fullscreen background image using feh
 exec --no-startup-id feh --bg-fill /home/chrcoe/Images/dark-pattern.jpg
+
+exec killall -q notify-osd
+exec --no-startup-id dunst -config $HOME/.i3/config_dunst
