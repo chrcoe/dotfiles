@@ -10,6 +10,7 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod1
+set $mod2 Mod4
 
 new_window 1pixel
 new_float 1pixel
@@ -207,6 +208,6 @@ exec --no-startup-id feh --bg-fill /home/chrcoe/Images/dark-pattern.jpg
 exec killall -q notify-osd
 exec --no-startup-id dunst -config $HOME/.i3/config_dunst
 
-# bind $mod+l to lock the screen using custom script...
-bindsym $mod+l exec $HOME/.i3/blur_lock
+# bind $mod2+l to lock the screen using custom script...
+bindsym $mod2+l exec $HOME/.i3/blur_lock
 exec xautolock -time 15 -locker '$HOME/.i3/blur_lock' &

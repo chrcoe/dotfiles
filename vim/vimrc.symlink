@@ -32,6 +32,7 @@ let g:neocomplete#force_omni_input_patterns.python = '\%([^. \t]\.\|^\s*@\|^\s*f
 "----------------------------------------------------------------
 " NERDTree settings
 map <C-E> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
 
 "----------------------------------------------------------------
 " Tagbar settings
