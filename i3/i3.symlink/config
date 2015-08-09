@@ -206,3 +206,7 @@ exec --no-startup-id feh --bg-fill /home/chrcoe/Images/dark-pattern.jpg
 
 exec killall -q notify-osd
 exec --no-startup-id dunst -config $HOME/.i3/config_dunst
+
+# bind $mod+l to lock the screen using custom script...
+bindsym $mod+l exec $HOME/.i3/blur_lock
+exec xautolock -time 15 -locker '$HOME/.i3/blur_lock' &
