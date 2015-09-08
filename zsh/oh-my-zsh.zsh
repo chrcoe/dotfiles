@@ -48,7 +48,7 @@ ZSH_THEME="bira"
 # Add wisely, as too many plugins slow down shell startup.
 # plugins=(git)
 # plugins=(git-extras gitfast autopep8 docker)
-plugins=(git-flow gitfast autopep8 docker sudo)
+plugins=(gitfast autopep8 docker sudo)
 
 # User configuration
 
