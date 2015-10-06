@@ -146,7 +146,7 @@ let NERDSpaceDelims=1
 
 set background=dark
 colorscheme solarized
-set colorcolumn=80
+set colorcolumn=79
 highlight ColorColumn ctermbg=black
 
 if has('gui_running')
