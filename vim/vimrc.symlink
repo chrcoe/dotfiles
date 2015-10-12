@@ -5,6 +5,9 @@ execute pathogen#helptags()
 syntax on
 filetype plugin indent on
 
+" this breaks vim middle mouse paste without pressing shift first ..
+" with this activated, you have to press shift+middle mouse to paste instead
+" if just middle mouse, but it needs to be on to allow mouse scrolling
 set mouse=a
 
 set exrc
@@ -61,8 +64,12 @@ let g:indent_guides_auto_colors = 1
 " must have astyle installed for C/C++/Java
 " must have pep8 installed for Python
 noremap <C-F> :Autoformat<CR>
+" noremap <C-F> :%!autopep8 -<CR>
+" let g:formatters_python = ['autopep8']
 
-"----------------------------------------------------------------
+
+
+"---------------------------------------------------------------m
 " Distraction free (Goyo)
 " nnoremap <leader>df :Goyo<CR>
 
