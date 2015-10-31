@@ -12,6 +12,8 @@ set mouse=a
 
 set exrc
 set secure
+" highlight all search results
+set hlsearch
 
 
 
