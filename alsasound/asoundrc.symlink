@@ -12,8 +12,9 @@ pcm.dmixer  {
         pcm "hw:1,0" # laptop
         # pcm "hw:2,0" # docked
         period_time 0
+        buffer_time 0
         period_size 4096
-        buffer_size 16384
+        buffer_size 65536
         rate 44100
     }
     bindings {
@@ -22,15 +23,15 @@ pcm.dmixer  {
     }
 }
 
-pcm.softvol {
-    type softvol
-    slave { pcm "dmixer" }
-    control {
-        name "Master"
-        card 1  # laptop
-        # card 2  # docked
-    }
-}
+# pcm.softvol {
+    # type softvol
+    # slave.pcm "default"
+    # control {
+        # name "Master"
+        # card 1  # laptop
+        # # card 2  # docked
+    # }
+# }
 
 ctl.dmixer {
     type hw
@@ -44,8 +45,8 @@ ctl.!default {
     # card 2  # docked
 }
 
-ctl.softvol {
-    type hw
-    card 1  # laptop
-    # card 2  # docked
-}
+# ctl.softvol {
+    # type hw
+    # card 1  # laptop
+    # # card 2  # docked
+# }
