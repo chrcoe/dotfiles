@@ -145,8 +145,8 @@
 #    ALSADevice=tee:hw,'/tmp/out.wav',wav
 #
 ALSADevice = default
-#ALSAMixer1 = PCM
-#ALSAMixer2 = Master
+ALSAMixer1 = Master
+ALSAMixer2 = PCM
 
 # Save software mixer state?
 # If enabled, a file 'softmixer' will be created in '~/.moc/' storing the
