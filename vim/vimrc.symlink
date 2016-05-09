@@ -137,6 +137,8 @@ let g:pymode_virtualenv = 1
 " Enable breakpoints plugin
 let g:pymode_breakpoint = 1
 let g:pymode_breakpoint_bind = '<leader>b'
+let g:pymode_breakpoint_cmd = 'from IPython import embed; embed()'
+
 " 
 " " syntax highlighting
 " let g:pymode_syntax = 1

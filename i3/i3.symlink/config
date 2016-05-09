@@ -200,6 +200,11 @@ bindsym $mod+Shift+m exec --no-startup-id $HOME/.i3/touchpadtoggle.sh
 bindsym XF86PowerOff exec shutdown now # not currently working
 bindsym Shift+XF86Search exec xsel -o # paste from search button on mx mouse not currently working
 
+# screenshot using shift+printscreen button and scrot
+bindsym Print exec scrot '%Y-%m-%d_$wx$h_shot.png' -e 'mv $f ~/Images'
+bindsym --release Shift+Print exec scrot -s '%Y-%m-%d_$wx$h_shot.png' -e 'mv $f ~/Images'
+
+
 # XF86Display is Fn+F7 - XF86LaunchA is Fn+F11
 bindsym XF86Display exec --no-startup-id $HOME/.screenlayout/docked.sh
 # bindsym Alt+XF86Display exec --no-startup-id $HOME/.screenlayout/undocked.sh # does not work yet...
