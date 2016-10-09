@@ -223,4 +223,4 @@ bindsym $mod2+l exec $HOME/.i3/blur_lock
 exec xautolock -time 15 -locker '$HOME/.i3/blur_lock' &
 
 # set mouse acceleration and threshold using xset
-exec --no-startup-id xset m 3/2 0
+# exec --no-startup-id xset m 5/4 0
