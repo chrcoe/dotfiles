@@ -1,0 +1,89 @@
+#
+# Example .tmux.conf
+#
+# By Nicholas Marriott. Public domain.
+#
+
+# Some tweaks to the status line
+set -g status-bg green
+set -g status-right "%D %H:%M"
+set -g window-status-current-attr "underscore"
+
+# No bells at all
+set -g bell-action none
+
+# 256 colors in terminal
+set -g default-terminal "screen-256color"
+
+# Lock after 15 minutes
+set -g lock-after-time 1800
+
+# allow vi movement keys (h,j,k,l) to work with buffer
+setw -g mode-keys vi
+
+# Keep windows around after they exit
+set -g remain-on-exit on
+
+# Turn on xterm-keys so that additional function keys get escape sequences
+set -g xterm-keys on
+
+# Change the prefix key to C-a
+set -g prefix C-a
+unbind C-b
+bind C-a send-prefix
+
+# Turn the mouse on, but without copy mode dragging
+set -g mouse on
+# unbind -n MouseDrag1Pane
+# unbind -temacs-copy MouseDrag1Pane
+
+# Some extra key bindings to select higher numbered windows
+bind -n F1 selectw -t:0
+bind -n F2 selectw -t:1
+bind -n F3 selectw -t:2
+bind -n F4 selectw -t:3
+bind -n F5 selectw -t:4
+bind -n F6 selectw -t:5
+bind -n F7 selectw -t:6
+bind -n F8 selectw -t:7
+bind -n F9 selectw -t:8
+bind -n F10 selectw -t:9
+bind -n F11 selectw -t:10
+bind -n F12 selectw -t:11
+
+# Use Alt-vim keys without prefix key to switch panes
+bind -n M-h select-pane -L
+bind -n M-j select-pane -D
+bind -n M-k select-pane -U
+bind -n M-l select-pane -R
+
+# attempting to select a window without needing prefix ...
+# want to use Alt + # to switch
+bind -n C-1 selectw -t:1
+
+# Reload tmux config
+bind r source-file ~/.tmux.conf
+
+# Shift arrow to switch windows
+bind -n S-Left  previous-window
+bind -n S-Right next-window
+
+# Keys to toggle monitoring activity in a window, and synchronize-panes
+bind m set monitor-activity
+bind y set synchronize-panes\; display 'synchronize-panes #{?synchronize-panes,on,off}'
+
+# Keys to hide and show a window name from the status line
+bind '-' set window-status-format '#I'\; set window-status-current-format '#I'
+bind '+' set window-status-format '#I:#W#F'\; set window-status-current-format '#I:#W#F'
+
+# split panes using | and -
+bind \ split-window -h
+bind - split-window -v
+unbind '"'
+unbind %
+
+# Create default session with a few windows
+new -d -s0
+neww -d
+neww -d
+neww -d
