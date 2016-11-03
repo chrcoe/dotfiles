@@ -18,3 +18,4 @@ git clone https://github.com/Chiel92/vim-autoformat
 git clone --recursive https://github.com/davidhalter/jedi-vim.git
 git clone https://github.com/shougo/neocomplete.vim
 git clone https://github.com/scrooloose/nerdcommenter
+git clone https://github.com/tpope/vim-fugitive
