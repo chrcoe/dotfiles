@@ -9,11 +9,12 @@ cd ~/.vim/bundle
 git clone https://github.com/altercation/vim-colors-solarized
 git clone https://github.com/Shougo/neocomplcache.vim
 git clone https://github.com/scrooloose/nerdtree
-sudo yum install ctags -y
+sudo apt-get install ctags -y
 git clone https://github.com/majutsushi/tagbar
 git clone https://github.com/kien/ctrlp.vim
 git clone https://github.com/nathanaelkane/vim-indent-guides
-sudo yum install astyle python-autopep8 -y
+sudo apt-get install astyle python-autopep8 -y
 git clone https://github.com/Chiel92/vim-autoformat
-git clone https://github.com/junegunn/goyo.vim
-
+git clone --recursive https://github.com/davidhalter/jedi-vim.git
+git clone https://github.com/shougo/neocomplete.vim
+git clone https://github.com/scrooloose/nerdcommenter
