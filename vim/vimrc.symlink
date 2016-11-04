@@ -86,13 +86,25 @@ noremap <C-F> :Autoformat<CR>
 "----------------------------------------------------------------
 " vim-airline
 "
-let g:airline_powerline_fonts = 1
-set ttimeoutlen=50
+" let g:airline_powerline_fonts = 1
+" set ttimeoutlen=50
+" set laststatus=2
+" if !exists('g:airline_symbols')
+    " let g:airline_symbols = {}
+" endif
+" let g:airline_symbols.space = "\ua0"
+
+"----------------------------------------------------------------
+
+
+"----------------------------------------------------------------
+" switch from vim-airline to system wide powerline for status bars
+set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
 set laststatus=2
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-let g:airline_symbols.space = "\ua0"
+set t_Co=256
+
+"----------------------------------------------------------------
+
 
 " "----------------------------------------------------------------
 " " tasklist (open with <leader> t or call :TaskList<CR>)

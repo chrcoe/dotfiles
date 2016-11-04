@@ -7,7 +7,8 @@
 # Some tweaks to the status line
 set -g status-bg green
 set -g status-right "%D %H:%M"
-set -g window-status-current-attr "underscore"
+set-window-option -g window-status-current-bg red
+# set -g window-status-current-attr "underscore"
 
 # No bells at all
 set -g bell-action none
@@ -36,6 +37,13 @@ bind C-a send-prefix
 set -g mouse on
 # unbind -n MouseDrag1Pane
 # unbind -temacs-copy MouseDrag1Pane
+# bind -n MouseDrag1Pane send-keys -M
+# bind -n MouseDown1Pane send-keys -M
+# turn on copy/paste in tmux using vi commands
+bind P paste-buffer
+bind-key -t vi-copy 'v' begin-selection
+bind-key -t vi-copy 'y' copy-selection
+bind-key -t vi-copy 'r' rectangle-toggle
 
 # Some extra key bindings to select higher numbered windows
 bind -n F1 selectw -t:0
@@ -56,6 +64,10 @@ bind -n C-h select-pane -L
 bind -n C-j select-pane -D
 bind -n C-k select-pane -U
 bind -n C-l select-pane -R
+
+# powerline for tmux
+# source /usr/local/lib/python2.7/dist-packages/powerline/bindings/tmux/powerline.conf
+# set-option -g default-terminal "screen-256color"
 
 # attempting to select a window without needing prefix ...
 # want to use Alt + # to switch
