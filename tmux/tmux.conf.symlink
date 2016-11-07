@@ -13,6 +13,9 @@ set-window-option -g window-status-current-bg red
 # No bells at all
 set -g bell-action none
 
+# disable auto naming
+set-option -g allow-rename off
+
 # 256 colors in terminal
 set -g default-terminal "screen-256color"
 
@@ -95,7 +98,11 @@ unbind '"'
 unbind %
 
 # Create default session with a few windows
-new -d -s0
+new -d -s ddesk -n 'MyDE'
+split-window -h
+split-window -v
+# splitw -v -p -50 -t 0 bar
+# splitw -h -p -50 -t 0 bar2
 neww -d
-neww -d
-neww -d
+neww -d -n 'logs'
+neww -d -n 'chat'
