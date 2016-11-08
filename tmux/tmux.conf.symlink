@@ -108,5 +108,6 @@ split-window -v
 # splitw -v -p -50 -t 0 bar
 # splitw -h -p -50 -t 0 bar2
 neww -d
-neww -d -n 'logs'
-neww -d -n 'chat'
+neww -d -n 'logs' tail -f /tmp/ddesk.log
+neww -d
+neww -d -n 'irc' weechat
