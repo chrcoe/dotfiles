@@ -77,6 +77,9 @@ noremap <C-F> :Autoformat<CR>
 " noremap <C-F> :%!autopep8 -<CR>
 " let g:formatters_python = ['autopep8']
 
+"---------------------------------------------------------------m
+" case insensitive searching!
+set ignorecase
 
 
 "---------------------------------------------------------------m
