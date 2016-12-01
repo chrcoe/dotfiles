@@ -4,7 +4,7 @@
 # By Nicholas Marriott. Public domain.
 #
 
-# Some tweaks to the status line
+# Some tweaks to the status line (overridden by powerline)
 set -g status-bg blue
 set -g status-right "%D %H:%M"
 set-window-option -g window-status-current-bg colour27
