@@ -41,3 +41,5 @@ done
 unset config_files
 
 source $HOME/.oh-my-zsh/oh-my-zsh.sh
+# this is to use powerline in ZSH prompt
+# source /usr/local/lib/python2.7/dist-packages/powerline/bindings/zsh/powerline.zsh

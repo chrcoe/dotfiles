@@ -10,7 +10,6 @@ set -g status-right "%D %H:%M"
 set-window-option -g window-status-current-bg colour27
 set-window-option -g window-status-current-fg white
 set -g pane-active-border-fg white
-# set -g pane-border-bg blue
 set -g pane-border-fg blue
 
 
@@ -76,10 +75,6 @@ bind -n C-l select-pane -R
 source /usr/local/lib/python2.7/dist-packages/powerline/bindings/tmux/powerline.conf
 set-option -g default-terminal "screen-256color"
 
-# attempting to select a window without needing prefix ...
-# want to use Alt + # to switch
-bind -n C-1 selectw -t:1
-
 # Reload tmux config
 bind r source-file ~/.tmux.conf
 
@@ -88,7 +83,7 @@ bind -n S-Left  previous-window
 bind -n S-Right next-window
 
 # Keys to toggle monitoring activity in a window, and synchronize-panes
-bind m set monitor-activity
+bind m set monitor-activity; display 'monitor-activity #{?monitor-activity,on,off}'
 bind y set synchronize-panes\; display 'synchronize-panes #{?synchronize-panes,on,off}'
 
 # Keys to hide and show a window name from the status line
