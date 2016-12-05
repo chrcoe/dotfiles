@@ -75,7 +75,7 @@ Xft*hinting:   Full
 !!-*-}
 
 !URxvt*font:    xft:Terminus:pixelsize=14,xft:Inconsolata\ for\ Powerline:pixelsize=14
-URxvt*font:    xft:Terminus,xft:Inconsolata\ for\ Powerline
+URxvt*font:    xft:Terminus,xft:Inconsolata\ for\ Powerline,xft:Sauce\ Code\ for\ Powerline
 xterm*faceName:           Terminus:style=Regular:size=14
 ! !URxvt*font:    xft:Terminus:pixelsize=14,xft:Inconsolata\ for\ Powerline:pixelsize=14
 ! URxvt*font:    xft:Terminus:pixelsize=30,xft:Inconsolata\ for\ Powerline:pixelsize=30

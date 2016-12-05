@@ -3,3 +3,4 @@
 export WORKON_HOME=~/.venvs
 source $(which virtualenvwrapper.sh)
 source $HOME/.bash_profile
+export VISUAL="vim"
