@@ -5,6 +5,13 @@ execute pathogen#helptags()
 syntax on
 filetype plugin indent on
 
+"----------------------------------------------------------------
+" setup hostname for conditional settings
+" let hostname=substitute(system('hostname'), '\n', '', '')
+let hostname=hostname()
+
+
+"----------------------------------------------------------------
 " this breaks vim middle mouse paste without pressing shift first ..
 " with this activated, you have to press shift+middle mouse to paste instead
 " if just middle mouse, but it needs to be on to allow mouse scrolling
@@ -20,8 +27,6 @@ set hlsearch
 "----------------------------------------------------------------
 " fugitive settings
 set diffopt+=vertical
-
-
 
 "----------------------------------------------------------------
 " neocomplete settings
@@ -102,8 +107,12 @@ set ignorecase
 
 "----------------------------------------------------------------
 " switch from vim-airline to system wide powerline for status bars
-" set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim
-set rtp+=/usr/lib/python3.5/site-packages/powerline/bindings/vim
+
+if hostname == "vagrant"
+    set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim
+elseif hostname == "euclid"
+    set rtp+=/usr/lib/python3.5/site-packages/powerline/bindings/vim
+endif
 set laststatus=2
 set t_Co=256
 

@@ -104,5 +104,6 @@ split-window -v
 # splitw -h -p -50 -t 0 bar2
 neww -d -n 'stage'
 neww -d -n 'prod'
+neww -d -n 'devbox'
 neww -d -n 'logs'
 neww -d -n 'irc' weechat
