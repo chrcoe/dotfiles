@@ -86,6 +86,10 @@ bind -n S-Right next-window
 bind m set monitor-activity; display 'monitor-activity #{?monitor-activity,on,off}'
 bind y set synchronize-panes\; display 'synchronize-panes #{?synchronize-panes,on,off}'
 
+# turn on monitoring on by default
+set -g monitor-activity on
+# set -g visual-activity on # i don't like the bar that pops up every time ..
+
 # Keys to hide and show a window name from the status line
 bind '-' set window-status-format '#I'\; set window-status-current-format '#I'
 bind '+' set window-status-format '#I:#W#F'\; set window-status-current-format '#I:#W#F'
