@@ -151,9 +151,14 @@ let g:pymode_lint_write = 1
 let g:pymode_virtualenv = 1
 
 " Enable breakpoints plugin
-let g:pymode_breakpoint = 1
-let g:pymode_breakpoint_bind = '<leader>b'
-let g:pymode_breakpoint_cmd = 'from IPython import embed; embed()'
+" let g:pymode_breakpoint = 1
+" let g:pymode_breakpoint_bind = '<leader>b'
+" let g:pymode_breakpoint_cmd = 'from IPython import embed; embed()'
+
+" use \b to enter the text regardless of pymode
+" map <leader>b ofrom IPython import embed; embed()
+noremap <leader>b oimport ipdb; ipdb.set_trace()o<Esc>
+
 
 " 
 " " syntax highlighting
