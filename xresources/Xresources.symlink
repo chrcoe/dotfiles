@@ -1,5 +1,5 @@
-#define DPI 96
-! #define DPI 168
+! #define DPI 96
+#define DPI 168
 
 ! Font DPI setting:
 ! for scaled (1.75), use 168
@@ -75,7 +75,7 @@ Xft*hinting:   Full
 !!-*-}
 
 !URxvt*font:    xft:Terminus:pixelsize=14,xft:Inconsolata\ for\ Powerline:pixelsize=14
-URxvt*font:    xft:Terminus,xft:Inconsolata\ for\ Powerline,xft:Sauce\ Code\ for\ Powerline
+URxvt*font:    xft:Terminus:pixelsize=13,xft:Inconsolata\ for\ Powerline:pixelsize=13,xft:Sauce\ Code\ for\ Powerline:pixelsize=13
 xterm*faceName:           Terminus:style=Regular:size=14
 ! !URxvt*font:    xft:Terminus:pixelsize=14,xft:Inconsolata\ for\ Powerline:pixelsize=14
 ! URxvt*font:    xft:Terminus:pixelsize=30,xft:Inconsolata\ for\ Powerline:pixelsize=30
