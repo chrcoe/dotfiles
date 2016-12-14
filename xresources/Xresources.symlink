@@ -1,4 +1,3 @@
-! #define DPI 96
 #define DPI 168
 
 ! Font DPI setting:
@@ -75,7 +74,7 @@ Xft*hinting:   Full
 !!-*-}
 
 !URxvt*font:    xft:Terminus:pixelsize=14,xft:Inconsolata\ for\ Powerline:pixelsize=14
-URxvt*font:    xft:Terminus:pixelsize=13,xft:Inconsolata\ for\ Powerline:pixelsize=13,xft:Sauce\ Code\ for\ Powerline:pixelsize=13
+URxvt*font:    xft:Terminus,xft:Inconsolata\ for\ Powerline,xft:Sauce\ Code\ for\ Powerline
 xterm*faceName:           Terminus:style=Regular:size=14
 ! !URxvt*font:    xft:Terminus:pixelsize=14,xft:Inconsolata\ for\ Powerline:pixelsize=14
 ! URxvt*font:    xft:Terminus:pixelsize=30,xft:Inconsolata\ for\ Powerline:pixelsize=30
@@ -85,7 +84,7 @@ URxvt.background:   [90]#002b36
 
 ! URL Handling:
 ! requires a perl module to be installed
-URxvt.url-launcher:   /usr/bin/chromium-dev --force-device-scale-factor=2
+URxvt.url-launcher:   /usr/bin/chromium
 URxvt.underlineURLs:  True
 
 ! Copy/Paste ability
