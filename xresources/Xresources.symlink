@@ -84,8 +84,15 @@ URxvt.background:   [90]#002b36
 
 ! URL Handling:
 ! requires a perl module to be installed
-URxvt.url-launcher:   /usr/bin/chromium
-URxvt.underlineURLs:  True
+URxvt.perl-ext-common:  default,matcher,url-select,selection-to-clipboard
+URxvt.url-launcher:     /usr/bin/xdg-open
+URxvt.underlineURLs:    true
+URxvt.matcher.button:   C1
+! allow keyboard URL usage
+URxvt.keysym.M-u:           perl:url-select:select_next
+URxvt.url-select.launcher:  /ust/bin/xdg-open
+URxvt.url-select.underline: true
+
 
 ! Copy/Paste ability
 
