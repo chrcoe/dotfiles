@@ -4,4 +4,9 @@ export WORKON_HOME=~/.venvs
 source $(which virtualenvwrapper.sh)
 source $HOME/.bash_profile
 export VISUAL="vim"
-export DEFAULT_USER='chrcoe'
+
+if [[ $(hostname) == 'vagrant' ]]; then
+    export DEFAULT_USER='vagrant'
+else
+    export DEFAULT_USER='chrcoe'
+fi
