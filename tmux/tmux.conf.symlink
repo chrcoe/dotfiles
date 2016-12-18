@@ -110,4 +110,7 @@ neww -d -n 'stage'
 neww -d -n 'prod'
 neww -d -n 'devbox'
 neww -d -n 'logs'
-neww -d -n 'irc' weechat
+neww -d -n 'irc'
+
+new -d -s arch -n 'arch'
+neww -d -n 'irc'
