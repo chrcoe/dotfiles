@@ -1,0 +1,51 @@
+[general]
+accounts = gmail-test
+pythonfile=$HOME/.offlineimap.py
+ui = blinkenlights
+socktimeout = 90
+
+[Account ddesk]
+autorefresh = 5
+quick = 10
+localrepository = ddesk-local
+remoterepository = ddesk-remote
+status_backend = sqlite
+
+[Account gmail-test]
+autorefresh = 5
+quick = 10
+localrepository = gmail-test-local
+remoterepository = gmail-test-remote
+status_backend = sqlite
+
+[Repository ddesk-local]
+type = GmailMaildir
+localfolders = /home/chrcoe/.mail/ddesk
+
+[Repository ddesk-remote]
+keepalive = 60
+type = Gmail
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+remoteuser = chris.coe@decisiondesk.com
+remotepasseval = get_pass('chris.coe@decisiondesk.com')
+nametrans = lambda foldername: re.sub ('^[gmail]', 'bak',
+    re.sub ('sent_mail', 'sent',
+    re.sub ('starred', 'flagged',
+    re.sub (' ', '_', foldername.lower()))))
+folderfilter = lambda foldername: foldername not in '[Gmail]/All Mail' and foldername not in 'Sent mail'
+
+[Repository gmail-test-local]
+type = GmailMaildir
+localfolders = /home/chrcoe/.mail/gmail-test
+
+[Repository gmail-test-remote]
+keepalive = 60
+type = Gmail
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+remoteuser = chrcoe.test@gmail.com
+remotepasseval = get_pass('chrcoe.test@gmail.com')
+nametrans = lambda foldername: re.sub ('^[gmail]', 'bak',
+    re.sub ('sent_mail', 'sent',
+    re.sub ('starred', 'flagged',
+    re.sub (' ', '_', foldername.lower()))))
+folderfilter = lambda foldername: foldername not in '[Gmail]/All Mail' and foldername not in 'Sent mail'
