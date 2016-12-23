@@ -1,21 +1,16 @@
 [general]
 accounts = gmail-test
 pythonfile=$HOME/.offlineimap.py
-ui = blinkenlights
+/* ui = blinkenlights */
+ui = ttyui
 socktimeout = 90
+autorefresh = 0
 
 [Account ddesk]
 autorefresh = 5
 quick = 10
 localrepository = ddesk-local
 remoterepository = ddesk-remote
-status_backend = sqlite
-
-[Account gmail-test]
-autorefresh = 5
-quick = 10
-localrepository = gmail-test-local
-remoterepository = gmail-test-remote
 status_backend = sqlite
 
 [Repository ddesk-local]
@@ -34,9 +29,27 @@ nametrans = lambda foldername: re.sub ('^[gmail]', 'bak',
     re.sub (' ', '_', foldername.lower()))))
 folderfilter = lambda foldername: foldername not in '[Gmail]/All Mail' and foldername not in 'Sent mail'
 
+[Account gmail-test]
+autorefresh = 5
+quick = 10
+localrepository = gmail-test-local
+remoterepository = gmail-test-remote
+status_backend = sqlite
+
 [Repository gmail-test-local]
 type = GmailMaildir
 localfolders = /home/chrcoe/.mail/gmail-test
+restoreatime = no
+maxconnections = 5
+nametrans = lambda folder: {
+    'drafts': '[Gmail]/Drafts',
+    'flagged': '[Gmail]/Starred',
+    'important': '[Gmail]/Important',
+    'inbox': 'INBOX',
+    'spam': '[Gmail]/Spam',
+    'trash': '[Gmail]/Trash'
+}.get(folder, folder)
+
 
 [Repository gmail-test-remote]
 keepalive = 60
@@ -44,8 +57,14 @@ type = Gmail
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 remoteuser = chrcoe.test@gmail.com
 remotepasseval = get_pass('chrcoe.test@gmail.com')
-nametrans = lambda foldername: re.sub ('^[gmail]', 'bak',
-    re.sub ('sent_mail', 'sent',
-    re.sub ('starred', 'flagged',
-    re.sub (' ', '_', foldername.lower()))))
-folderfilter = lambda foldername: foldername not in '[Gmail]/All Mail' and foldername not in 'Sent mail'
+maxconnections = 5
+nametrans = lambda folder:  re.sub('\[Gmail\]\/All Mail', 'archive',
+                            re.sub('\[Gmail\]\/Drafts','drafts',
+                            re.sub('\[Gmail\]\/Important','important',
+                            re.sub('\[Gmail\]\/Sent Mail','sent',
+                            re.sub('\[Gmail\]\/Spam','spam',
+                            re.sub('\[Gmail\]\/Starred','flagged',
+                            re.sub('\[Gmail\]\/Trash','trash',
+                            re.sub('INBOX','inbox'))))))))
+
+.. vim: set syntax=py
