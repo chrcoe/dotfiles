@@ -17,6 +17,8 @@ let hostname=hostname()
 " if just middle mouse, but it needs to be on to allow mouse scrolling
 set mouse=a
 
+set modeline
+
 set exrc
 set secure
 " highlight all search results
