@@ -5,7 +5,7 @@ accounts = gmail-test
 pythonfile = $HOME/.offlineimap.py
 ui = ttyui
 socktimeout = 90
-autorefresh = 0
+autorefresh = 0.5
 
 [Account ddesk]
 autorefresh = 5
