@@ -114,4 +114,7 @@ neww -d -n 'logs'
 neww -d -n 'irc'
 
 new -d -s arch -n 'arch'
+neww -d
+neww -d
+neww -d -n 'email' sup
 neww -d -n 'irc'

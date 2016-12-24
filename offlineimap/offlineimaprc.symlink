@@ -5,7 +5,6 @@ accounts = gmail-test
 pythonfile = $HOME/.offlineimap.py
 ui = ttyui
 socktimeout = 90
-autorefresh = 0.5
 
 [Account ddesk]
 autorefresh = 5
@@ -31,7 +30,8 @@ nametrans = lambda foldername: re.sub ('^[gmail]', 'bak',
 folderfilter = lambda foldername: foldername not in '[Gmail]/All Mail' and foldername not in 'Sent mail'
 
 [Account gmail-test]
-autorefresh = 5
+# number of seconds between refreshing from server ...
+autorefresh = 1.0
 quick = 10
 localrepository = gmail-test-local
 remoterepository = gmail-test-remote
@@ -52,6 +52,10 @@ nametrans = lambda folder: {
 
 
 [Repository gmail-test-remote]
+# realdelete set to True will actually delete the email...
+# realdelete set to False will remove all labels and retain the email in 'All Mail'
+# which is effectively 'archiving' the message in gmail
+truedelete=True
 auth_mechanisms = GSSAPI, CRAM-MD5, PLAIN, LOGIN
 keepalive = 60
 type = Gmail
