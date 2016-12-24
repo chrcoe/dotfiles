@@ -9,3 +9,7 @@ git/gitconfig.symlink
 
 moc.symlink/pid
 moc.symlink/playlist.m3u
+
+sup.symlink/xapian
+sup.symlink/log
+sup.symlink/exception-log.txt

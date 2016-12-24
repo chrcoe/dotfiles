@@ -1,7 +1,8 @@
+# vim:syntax=python
+
 [general]
 accounts = gmail-test
-pythonfile=$HOME/.offlineimap.py
-/* ui = blinkenlights */
+pythonfile = $HOME/.offlineimap.py
 ui = ttyui
 socktimeout = 90
 autorefresh = 0
@@ -42,29 +43,33 @@ localfolders = /home/chrcoe/.mail/gmail-test
 restoreatime = no
 maxconnections = 5
 nametrans = lambda folder: {
-    'drafts': '[Gmail]/Drafts',
-    'flagged': '[Gmail]/Starred',
-    'important': '[Gmail]/Important',
-    'inbox': 'INBOX',
-    'spam': '[Gmail]/Spam',
-    'trash': '[Gmail]/Trash'
-}.get(folder, folder)
+    'drafts':'[Gmail]/Drafts',
+    'flagged':'[Gmail]/Starred',
+    'important':'[Gmail]/Important',
+    'inbox':'INBOX',
+    'spam':'[Gmail]/Spam',
+    'trash': '[Gmail]/Trash'}.get(folder, folder)
 
 
 [Repository gmail-test-remote]
+auth_mechanisms = GSSAPI, CRAM-MD5, PLAIN, LOGIN
 keepalive = 60
 type = Gmail
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 remoteuser = chrcoe.test@gmail.com
 remotepasseval = get_pass('chrcoe.test@gmail.com')
 maxconnections = 5
-nametrans = lambda folder:  re.sub('\[Gmail\]\/All Mail', 'archive',
+nametrans = lambda folder:  re.sub('\[Gmail\]\/All Mail','archive',
                             re.sub('\[Gmail\]\/Drafts','drafts',
                             re.sub('\[Gmail\]\/Important','important',
                             re.sub('\[Gmail\]\/Sent Mail','sent',
                             re.sub('\[Gmail\]\/Spam','spam',
                             re.sub('\[Gmail\]\/Starred','flagged',
                             re.sub('\[Gmail\]\/Trash','trash',
-                            re.sub('INBOX','inbox'))))))))
-
-.. vim: set syntax=py
+                            re.sub('INBOX','inbox',folder))))))))
+# want to only pull down Drafts, Important, Starred, INBOX
+folderfilter = lambda folder: folder in [
+    '[Gmail]/Drafts',
+    '[Gmail]/Important',
+    '[Gmail]/Starred',
+    'INBOX']
