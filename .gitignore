@@ -13,4 +13,5 @@ moc.symlink/playlist.m3u
 sup.symlink/xapian
 sup.symlink/log
 sup.symlink/exception-log.txt
+sup.symlink/lock
 *.mbox
