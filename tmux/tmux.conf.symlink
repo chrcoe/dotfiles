@@ -113,8 +113,8 @@ neww -d -n 'devbox'
 neww -d -n 'logs'
 neww -d -n 'irc'
 
-new -d -s arch -n 'arch'
-neww -d
-neww -d
+new -d -s arch -n 'code'
+neww -d -n 'shell'
+neww -d -n 'logs'
 neww -d -n 'email' sup
 neww -d -n 'irc'

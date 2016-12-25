@@ -17,7 +17,7 @@
 :sent_source: maildir:/home/chrcoe/.mail/gmail-test/sent
 :archive_sent: true
 :poll_interval: 30
-:wrap_width: 0
+:wrap_width: 80
 :slip_rows: 0
 :col_jump: 2
 :stem_language: english
@@ -31,5 +31,5 @@
     :alternates: []
     :sendmail: "/usr/bin/msmtp -t --read-envelope-from"
     :signature: "/home/chrcoe/.sup/signature"
-    :gpgkey: 'chrcoe01@gmail.com'
+    :gpgkey: '63C72A388E56905BDD669E0099CFE0D4E04C8F6A'
 :time_mode: 
