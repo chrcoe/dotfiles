@@ -73,6 +73,7 @@ bind -n C-l select-pane -R
 
 # powerline for tmux
 source /usr/local/lib/python2.7/dist-packages/powerline/bindings/tmux/powerline.conf
+source /usr/lib/python3.5/site-packages/powerline/bindings/tmux/powerline.conf
 set-option -g default-terminal "screen-256color"
 
 # Reload tmux config
@@ -112,5 +113,8 @@ neww -d -n 'devbox'
 neww -d -n 'logs'
 neww -d -n 'irc'
 
-new -d -s arch -n 'arch'
+new -d -s arch -n 'code'
+neww -d -n 'shell'
+neww -d -n 'logs'
+neww -d -n 'email' sup
 neww -d -n 'irc'

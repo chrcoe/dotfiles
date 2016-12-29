@@ -1,0 +1,40 @@
+---
+- !supmua.org,2006-10-01/Redwood/Maildir
+  uri: maildir:/home/chrcoe/.mail/gmail-test/inbox
+  usual: true
+  archived: false
+  sync_back: true
+  id: 1
+  labels: []
+- !supmua.org,2006-10-01/Redwood/Maildir
+  uri: maildir:/home/chrcoe/.mail/gmail-test/drafts
+  usual: true
+  archived: true
+  sync_back: true
+  id: 2
+  labels:
+  - Draft
+- !supmua.org,2006-10-01/Redwood/Maildir
+  uri: maildir:/home/chrcoe/.mail/gmail-test/important
+  usual: true
+  archived: true
+  sync_back: true
+  id: 3
+  labels:
+  - Important
+- !supmua.org,2006-10-01/Redwood/Maildir
+  uri: maildir:/home/chrcoe/.mail/gmail-test/flagged
+  usual: true
+  archived: true
+  sync_back: true
+  id: 4
+  labels: []
+- !supmua.org,2006-10-01/Redwood/Maildir
+  uri: maildir:/home/chrcoe/.mail/gmail-test/sent
+  usual: true
+  archived: true
+  sync_back: true
+  id: 5
+  labels:
+  - Sent
+- !supmua.org,2006-10-01/Redwood/SentLoader {}
