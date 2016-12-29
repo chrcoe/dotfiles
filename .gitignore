@@ -9,3 +9,9 @@ git/gitconfig.symlink
 
 moc.symlink/pid
 moc.symlink/playlist.m3u
+
+logs/*
+logs
+*.log
+script/plugins.xml.gz
+slack.cache
