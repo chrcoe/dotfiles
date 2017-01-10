@@ -13,7 +13,7 @@ moc.symlink/playlist.m3u
 logs/*
 logs
 *.log
-script/plugins.xml.gz
+weechat.symlink/script/plugins.xml.gz
 slack.cache
 
 sup.symlink/xapian

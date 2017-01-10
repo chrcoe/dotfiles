@@ -217,3 +217,11 @@ set list
 " get rid of shift ; to get to : commands
 nnoremap ; :
 "----------------------------------------------------------------
+
+
+"----------------------------------------------------------------
+" automatically strip trailing whitespace on given filetypes
+" autocmd FileType c,cpp,java,php,py,pl autocmd BufWritePre <buffer> %s/\s\+$//e
+" strip ALL whitespace from ALL files
+autocmd BufWritePre * %s/\s\+$//e
+"----------------------------------------------------------------
