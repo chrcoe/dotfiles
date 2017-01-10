@@ -7,7 +7,7 @@ ui = ttyui
 socktimeout = 90
 
 [Account ddesk]
-autorefresh = 5
+autorefresh = 1.0
 quick = 10
 localrepository = ddesk-local
 remoterepository = ddesk-remote
@@ -16,18 +16,43 @@ status_backend = sqlite
 [Repository ddesk-local]
 type = GmailMaildir
 localfolders = /home/chrcoe/.mail/ddesk
+restoreatime = no
+maxconnections = 5
+nametrans = lambda folder: {
+    'drafts':'[Gmail]/Drafts',
+    'flagged':'[Gmail]/Starred',
+    'important':'[Gmail]/Important',
+    'inbox':'INBOX',
+    'spam':'[Gmail]/Spam',
+    'trash': '[Gmail]/Trash'}.get(folder, folder)
+
 
 [Repository ddesk-remote]
+# realdelete set to True will actually delete the email...
+# realdelete set to False will remove all labels and retain the email in 'All Mail'
+# which is effectively 'archiving' the message in gmail
+truedelete=True
+auth_mechanisms = GSSAPI, CRAM-MD5, PLAIN, LOGIN
 keepalive = 60
 type = Gmail
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 remoteuser = chris.coe@decisiondesk.com
 remotepasseval = get_pass('chris.coe@decisiondesk.com')
-nametrans = lambda foldername: re.sub ('^[gmail]', 'bak',
-    re.sub ('sent_mail', 'sent',
-    re.sub ('starred', 'flagged',
-    re.sub (' ', '_', foldername.lower()))))
-folderfilter = lambda foldername: foldername not in '[Gmail]/All Mail' and foldername not in 'Sent mail'
+maxconnections = 5
+nametrans = lambda folder:  re.sub('\[Gmail\]\/All Mail','archive',
+                            re.sub('\[Gmail\]\/Drafts','drafts',
+                            re.sub('\[Gmail\]\/Important','important',
+                            re.sub('\[Gmail\]\/Sent Mail','sent',
+                            re.sub('\[Gmail\]\/Spam','spam',
+                            re.sub('\[Gmail\]\/Starred','flagged',
+                            re.sub('\[Gmail\]\/Trash','trash',
+                            re.sub('INBOX','inbox',folder))))))))
+# want to only pull down Drafts, Important, Starred, INBOX
+folderfilter = lambda folder: folder in [
+    '[Gmail]/Drafts',
+    '[Gmail]/Important',
+    '[Gmail]/Starred',
+    'INBOX']
 
 [Account gmail-test]
 # number of seconds between refreshing from server ...
