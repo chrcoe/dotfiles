@@ -79,7 +79,7 @@ let g:indent_guides_auto_colors = 1
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=brcyan ctermbg=4
 
 "----------------------------------------------------------------
-" AutoFormat settings 
+" AutoFormat settings
 " must have astyle installed for C/C++/Java
 " must have pep8 installed for Python
 noremap <C-F> :Autoformat<CR>
@@ -96,7 +96,7 @@ set ignorecase
 if hostname == "vagrant"
     set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim
 elseif hostname == "euclid"
-    set rtp+=/usr/lib/python3.5/site-packages/powerline/bindings/vim
+    set rtp+=/usr/lib/python3.6/site-packages/powerline/bindings/vim
 endif
 set laststatus=2
 set t_Co=256
@@ -162,13 +162,13 @@ let g:pymode_virtualenv = 1
 noremap <leader>b oimport ipdb; ipdb.set_trace()o<Esc>
 
 
-" 
+"
 " " syntax highlighting
 " let g:pymode_syntax = 1
 " let g:pymode_syntax_all = 1
 " let g:pymode_syntax_indent_errors = g:pymode_syntax_all
 " let g:pymode_syntax_space_errors = g:pymode_syntax_all
-" 
+"
 " " autofold code
 let g:pymode_folding = 1
 
