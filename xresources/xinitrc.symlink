@@ -1,0 +1,5 @@
+# set the default DPI to 168
+xrandr --dpi 168
+
+## Set Synaptics touchpad to off
+synclient TouchpadOff=1 &

@@ -212,16 +212,16 @@ bindsym XF86Display exec --no-startup-id $HOME/.screenlayout/docked.sh
 bindsym XF86LaunchA exec --no-startup-id $HOME/.screenlayout/undocked.sh # does not work yet...
 
 # NetworkManager applet integration
-exec --no-startup-id nm-applet
+# exec --no-startup-id nm-applet
 # Fullscreen background image using feh
-exec --no-startup-id feh --bg-fill /home/chrcoe/Images/dark-pattern.jpg
+# exec --no-startup-id feh --bg-fill /home/chrcoe/Images/dark-pattern.jpg
 
 exec killall -q notify-osd
 exec --no-startup-id dunst -config $HOME/.i3/config_dunst
 
 # bind $mod2+l to lock the screen using custom script...
 bindsym $mod2+l exec $HOME/.i3/blur_lock
-exec xautolock -time 15 -locker '$HOME/.i3/blur_lock' &
+# exec xautolock -time 15 -locker '$HOME/.i3/blur_lock' &
 
 # set mouse acceleration and threshold using xset
 # exec --no-startup-id xset m 5/4 0

@@ -10,7 +10,7 @@
 # sleep 60; pgrep i3lock && xset dpms force off
 
 
-# lock the screen using this image
-i3lock -i /home/chrcoe/.i3/red-bg.png
+# lock the screen with red background
+i3lock -c FF0000
 sleep 60; pgrep i3lock && xset dpms force off
 
