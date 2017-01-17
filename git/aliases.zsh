@@ -6,6 +6,7 @@ then
   alias git=$hub_path
 fi
 
+
 # The rest of my fun git aliases
 alias gfl='git fetch --prune && git pull --prune'
 alias gl='git pull --prune'
@@ -14,11 +15,12 @@ alias gp='git push'
 alias gd='git diff'
 alias gc='git commit'
 alias gca='git commit -a'
-alias gco='git checkout'
+# alias gco='git checkout'
 alias gcb='git copy-branch-name'
-alias gb='git branch'
-# alias gst='git status -sb' # upgrade your git if -sb breaks for you. it's fun.
-alias gs='git status -sb' # upgrade your git if -sb breaks for you. it's fun.
+# alias gb='git branch'
+alias gst='git status -sb' # upgrade your git if -sb breaks for you. it's fun.
+compdef _git gst=git-status
+# alias gs='git status -sb' # upgrade your git if -sb breaks for you. it's fun.
 alias ga='git add'
 alias grm='git rm --cached'
 alias gsyncmaster='git fetch upstream && git checkout master && git merge upstream/master'
