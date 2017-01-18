@@ -10,3 +10,5 @@ if [[ $(hostname) == 'vagrant' ]]; then
 else
     export DEFAULT_USER='chrcoe'
 fi
+
+eval "$(rbenv init -)"
