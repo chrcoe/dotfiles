@@ -5,6 +5,11 @@ source $(which virtualenvwrapper.sh)
 source $HOME/.bash_profile
 export VISUAL="vim"
 
+export PATH="$HOME/.rbenv/shims:$PATH"
+export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+
+export MSF_DATABASE_CONFIG=/opt/metasploit/config/database.yml
+
 if [[ $(hostname) == 'vagrant' ]]; then
     export DEFAULT_USER='vagrant'
 else
