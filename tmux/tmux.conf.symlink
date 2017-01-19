@@ -102,11 +102,12 @@ unbind '"'
 unbind %
 
 # Create default session with a few windows
-new -d -s ddesk -n 'MyDE'
+new -d -s ddesk -n 'code'
 # split-window -h
 # split-window -v
 # splitw -v -p -50 -t 0 bar
 # splitw -h -p -50 -t 0 bar2
+neww -d -n 'shell'
 neww -d -n 'stage'
 neww -d -n 'prod'
 neww -d -n 'devbox'
