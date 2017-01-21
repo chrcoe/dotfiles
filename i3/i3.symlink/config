@@ -9,8 +9,9 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
-set $mod2 Mod4
+# set $mod Mod1
+set $mod Mod4
+# set $mod2 Mod4
 
 new_window 1pixel
 new_float 1pixel
@@ -18,8 +19,8 @@ new_float 1pixel
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 #font pango:monospace 8
-#font pango:Terminus 20
-font pango:Terminus 11
+#font pango:Terminus 11
+font pango:Terminess Powerline 11
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -176,7 +177,7 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        font pango:Terminus 11
+        font pango:Terminess Powerline 11
         position top
         status_command i3status
         #mode hide
@@ -220,7 +221,8 @@ exec killall -q notify-osd
 exec --no-startup-id dunst -config $HOME/.i3/config_dunst
 
 # bind $mod2+l to lock the screen using custom script...
-bindsym $mod2+l exec $HOME/.i3/blur_lock
+# bindsym $mod2+l exec $HOME/.i3/blur_lock
+bindsym $mod+Ctrl+l exec $HOME/.i3/blur_lock
 # exec xautolock -time 15 -locker '$HOME/.i3/blur_lock' &
 
 # set mouse acceleration and threshold using xset
