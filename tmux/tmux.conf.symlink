@@ -80,8 +80,8 @@ set-option -g default-terminal "screen-256color"
 bind r source-file ~/.tmux.conf
 
 # Shift arrow to switch windows
-bind -n S-Up previous-window
-bind -n S-Down next-window
+bind -n S-Left previous-window
+bind -n S-Right next-window
 
 # Keys to toggle monitoring activity in a window, and synchronize-panes
 bind m set monitor-activity; display 'monitor-activity #{?monitor-activity,on,off}'
