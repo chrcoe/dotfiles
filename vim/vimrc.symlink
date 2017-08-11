@@ -87,6 +87,21 @@ noremap <C-F> :Autoformat<CR>
 " noremap <C-F> :%!autopep8 -<CR>
 " let g:formatters_python = ['autopep8']
 
+" golang stuff ... for vim-go plugin
+let g:go_highlight_types = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_extra_types = 1
+" turn tabs back into spaces .. vim-go broke my tabs! this doesn't seem to be
+" working
+" autocmd BufNewFile,BufRead *.go setlocal expandtab tabstop=4 shiftwidth=4
+" turning off auto formatting ... i figure before the code gets checked in,
+" it could be auto formatted
+let g:go_fmt_autosave = 0
+autocmd FileType go nmap <leader>r  <Plug>(go-run)
+autocmd FileType go nmap <leader>b  <Plug>(go-build)
+
 "----------------------------------------------------------------
 " case insensitive searching!
 set ignorecase
@@ -150,7 +165,7 @@ let g:pymode_virtualenv = 1
 
 " use \b to enter the text regardless of pymode
 " map <leader>b ofrom IPython import embed; embed()
-noremap <leader>b oimport ipdb; ipdb.set_trace()o<Esc>
+noremap <leader>b O<CR>import ipdb; ipdb.set_trace()<Esc>o<Esc>
 
 
 "
