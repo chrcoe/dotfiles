@@ -35,6 +35,7 @@ set diffopt+=vertical
 " from here: https://github.com/Shougo/neocomplete.vim/issues/302
 let g:neocomplete#enable_at_startup = 1
 autocmd FileType python setlocal omnifunc=jedi#completions
+autocmd FileType go setlocal omnifunc=go#complete#Complete
 let g:jedi#completions_enabled = 0
 let g:jedi#auto_vim_configuration = 0
 if !exists('g:neocomplete#force_omni_input_patterns')
@@ -223,7 +224,7 @@ set list
 "set listchars=tab:>-,nbsp:_,trail:.
 exec "set listchars=tab:\uBB\uBB,nbsp:_,trail:\uB7"
 " exec "set listchars=nbsp:_,trail:\uB7"
-autocmd FileType go exec "set listchars=tab:>_,nbsp:_,trail:-"
+autocmd FileType go exec "set listchars=tab:>_,nbsp:_,trail:\uB7"
 
 " get rid of shift ; to get to : commands
 nnoremap ; :
