@@ -35,6 +35,7 @@ set diffopt+=vertical
 " from here: https://github.com/Shougo/neocomplete.vim/issues/302
 let g:neocomplete#enable_at_startup = 1
 autocmd FileType python setlocal omnifunc=jedi#completions
+autocmd FileType go setlocal omnifunc=go#complete#Complete
 let g:jedi#completions_enabled = 0
 let g:jedi#auto_vim_configuration = 0
 if !exists('g:neocomplete#force_omni_input_patterns')
@@ -82,9 +83,27 @@ let g:indent_guides_auto_colors = 1
 " AutoFormat settings
 " must have astyle installed for C/C++/Java
 " must have pep8 installed for Python
+" also install autoflake for Python
 noremap <C-F> :Autoformat<CR>
 " noremap <C-F> :%!autopep8 -<CR>
 " let g:formatters_python = ['autopep8']
+
+" golang stuff ... for vim-go plugin
+let g:go_highlight_types = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_extra_types = 1
+" turn tabs back into spaces .. vim-go broke my tabs! this doesn't seem to be
+" working
+autocmd BufNewFile,BufRead *.go setlocal expandtab tabstop=4 shiftwidth=4
+" turning off auto formatting ... i figure before the code gets checked in,
+" it could be auto formatted
+" let g:go_fmt_autosave = 0
+autocmd FileType go nmap <leader>r  <Plug>(go-run)
+autocmd FileType go nmap <leader>b  <Plug>(go-build)
+set autowrite
+
 
 "----------------------------------------------------------------
 " case insensitive searching!
@@ -93,7 +112,7 @@ set ignorecase
 
 "----------------------------------------------------------------
 " system wide powerline for status bars
-if hostname == "vagrant"
+if hostname == "vagrant" || hostname == "devbox"
     set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim
 elseif hostname == "euclid"
     set rtp+=/usr/lib/python3.6/site-packages/powerline/bindings/vim
@@ -149,7 +168,7 @@ let g:pymode_virtualenv = 1
 
 " use \b to enter the text regardless of pymode
 " map <leader>b ofrom IPython import embed; embed()
-noremap <leader>b oimport ipdb; ipdb.set_trace()o<Esc>
+autocmd FileType python noremap <leader>b O<CR>import ipdb; ipdb.set_trace()<Esc>o<Esc>
 
 
 "
@@ -199,10 +218,15 @@ set nowrap
 " ideas from Damian Conway (OSCON 2013):
 " https://www.youtube.com/watch?v=aHm36-na4-4
 
-" whitespace characters
-"set listchars=tab:>-,nbsp:_,trail:.
-exec "set listchars=tab:\uBB\uBB,nbsp:_,trail:\uB7"
+" scriptencoding utf-8
+
 set list
+
+" whitespace characters
+exec "set listchars=tab:\uBB\uBB,nbsp:_,trail:\uB7"
+autocmd FileType go exec "set listchars=tab:>_,nbsp:_,trail:\uB7"
+" exec "set listchars=nbsp:_,trail:\uB7"
+
 
 " get rid of shift ; to get to : commands
 nnoremap ; :

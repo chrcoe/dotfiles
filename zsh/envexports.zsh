@@ -3,7 +3,7 @@
 export WORKON_HOME=~/.venvs
 source $(which virtualenvwrapper.sh)
 # source $HOME/.bash_profile
-source $HOME/.zsh_profile
+# source $HOME/.zsh_profile
 export VISUAL="vim"
 
 export PATH="$HOME/.rbenv/shims:$PATH"
