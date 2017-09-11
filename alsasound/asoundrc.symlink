@@ -1,5 +1,10 @@
 # changes from here: http://www.alsa-project.org/main/index.php/Asoundrc#dmix
 
+# pcm.!default {
+    # type plug
+    # slave.pcm "btheadset"
+# }
+
 pcm.!default {
     type plug
     slave.pcm "dmixer"
@@ -23,10 +28,32 @@ pcm.dmixer  {
     }
 }
 
+pcm.btheadset {
+   type plug
+   slave {
+       pcm {
+           type bluetooth
+           device FC:58:FA:30:00:A2
+           profile "auto"
+       }
+   }
+   hint {
+       show on
+       description "BT Headset"
+   }
+}
+ctl.btheadset {
+  type bluetooth
+}
+
 # pcm.bluetooth {
     # type bluetooth
-    # device "8F:67:E3:BF:EF:E2"
+    # device "FC:58:FA:30:00:A2"
     # profile "auto"
+# }
+
+# ctl.bluetooth {
+    # type bluetooth
 # }
 
 # pcm.softvol {
