@@ -49,7 +49,8 @@ ZSH_THEME="agnoster"
 # Add wisely, as too many plugins slow down shell startup.
 # plugins=(git)
 # plugins=(git-extras gitfast autopep8 docker)
-plugins=(gitfast autopep8 docker sudo)
+# plugins=(gitfast autopep8 docker sudo kubectl)
+plugins=(gitfast docker sudo kubectl golang nmap pass python z)
 # plugins=(git autopep8 docker sudo)
 
 # User configuration
