@@ -47,9 +47,9 @@ set -g mouse on
 # bind -n MouseDown1Pane send-keys -M
 # turn on copy/paste in tmux using vi commands
 bind P paste-buffer
-bind-key -t vi-copy 'v' begin-selection
-bind-key -t vi-copy 'y' copy-selection
-bind-key -t vi-copy 'r' rectangle-toggle
+# bind-key -t vi-copy 'v' begin-selection
+# bind-key -t vi-copy 'y' copy-selection
+# bind-key -t vi-copy 'r' rectangle-toggle
 
 # Some extra key bindings to select higher numbered windows
 bind -n F1 selectw -t:0

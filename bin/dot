@@ -7,10 +7,13 @@
 export ZSH_DOT=$HOME/.dotfiles
 
 # Set OS X defaults
-$ZSH_DOT/osx/set-defaults.sh
+# $ZSH_DOT/osx/set-defaults.sh
 
 # Upgrade homebrew
-brew update
+# brew update
 
 # Install homebrew packages
-$ZSH_DOT/homebrew/install.sh 2>&1
+# $ZSH_DOT/homebrew/install.sh 2>&1
+
+# update via pacman
+sudo pacman -Syu
