@@ -1,5 +1,5 @@
-# shortcut to this dotfiles path is $ZSH
-export ZSH=$HOME/.dotfiles
+# shortcut to this dotfiles path is $ZSH_DOT
+export ZSH_DOT=$HOME/.dotfiles
 
 # your project folder that we can `c [tab]` to
 export PROJECTS=~/code
@@ -14,7 +14,7 @@ fi
 
 # all of our zsh files
 typeset -U config_files
-config_files=($ZSH/**/*.zsh)
+config_files=($ZSH_DOT/**/*.zsh)
 
 # load the path files
 for file in ${(M)config_files:#*/path.zsh}
@@ -25,7 +25,6 @@ done
 # load everything but the path and completion files
 for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
 do
-  echo $file
   source $file
 done
 
@@ -41,10 +40,11 @@ done
 
 unset config_files
 
-source $HOME/.oh-my-zsh/oh-my-zsh.sh
+source $ZSH/oh-my-zsh.sh
 # this is to use powerline in ZSH prompt
 # source /usr/lib/python3.5/site-packages/powerline/bindings/zsh/powerline.zsh
 # source /usr/local/lib/python2.7/dist-packages/powerline/bindings/zsh/powerline.zsh
+source /usr/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
 
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
