@@ -15,7 +15,13 @@ RUN apt-get install -y \
     net-tools \
     zsh \
     vim \
-    tmux
+    tmux \
+    tree
+
+RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+RUN chmod +x ./kubectl
+RUN mv ./kubectl /usr/local/bin/kubectl
+
 
 RUN easy_install pip
 RUN pip install virtualenvwrapper
@@ -26,6 +32,6 @@ ADD entrypoint /entrypoint
 # RUN useradd -g wheel,docker -ms /bin/zsh chrcoe
 RUN useradd -ms /bin/zsh chrcoe
 RUN chown chrcoe:chrcoe /entrypoint
-VOLUME ["/code", "/home/chrcoe/.dotfiles"]
+VOLUME ["/home/chrcoe/.dotfiles"]
 USER chrcoe
-WORKDIR "/home/chrcoe"
+WORKDIR "/home/chrcoe/code"

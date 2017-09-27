@@ -1,14 +1,20 @@
 #! /bin/bash
 
+# install oh-my-zsh
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+# install kubectl
+# curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+# chmod +x ./kubectl
+# mv ./kubectl /usr/local/bin/kubectl
 
-# cleanup after oh-my-zsh to use the one in my dotfiles
+
+# cleanup after oh-my-zsh to use the one in my dotfiles without being prompted to overwrite it
 rm /home/chrcoe/.zshrc
 
 # cd /home/code
 # git clone https://github.com/powerline/fonts.git
 
-cd /home/chrcoe/.dotfiles
-script/bootstrap
+# bootstrap all dotfiles ...
+/home/chrcoe/.dotfiles/script/bootstrap
 
 /bin/zsh
