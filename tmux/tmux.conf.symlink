@@ -35,9 +35,9 @@ set -g remain-on-exit on
 set -g xterm-keys on
 
 # Change the prefix key to C-a
-set -g prefix C-a
-unbind C-b
-bind C-a send-prefix
+set -g prefix C-b
+# unbind C-b
+bind C-b send-prefix
 
 # Turn the mouse on, but without copy mode dragging
 set -g mouse on
@@ -102,7 +102,7 @@ unbind '"'
 unbind %
 
 # Create default session with a few windows
-new -d -s ddesk -n 'code'
+new -d -s devbox -n 'code'
 # split-window -h
 # split-window -v
 # splitw -v -p -50 -t 0 bar
@@ -112,10 +112,4 @@ neww -d -n 'stage'
 neww -d -n 'prod'
 neww -d -n 'devbox'
 neww -d -n 'logs'
-neww -d -n 'irc'
-
-new -d -s arch -n 'code'
-neww -d -n 'shell'
-neww -d -n 'logs'
-neww -d -n 'email' sup
 neww -d -n 'irc'

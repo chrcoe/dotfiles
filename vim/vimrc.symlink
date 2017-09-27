@@ -104,7 +104,6 @@ autocmd FileType go nmap <leader>r  <Plug>(go-run)
 autocmd FileType go nmap <leader>b  <Plug>(go-build)
 set autowrite
 
-
 "----------------------------------------------------------------
 " case insensitive searching!
 set ignorecase
@@ -221,12 +220,10 @@ set nowrap
 " scriptencoding utf-8
 
 set list
-
 " whitespace characters
 exec "set listchars=tab:\uBB\uBB,nbsp:_,trail:\uB7"
-autocmd FileType go exec "set listchars=tab:>_,nbsp:_,trail:\uB7"
 " exec "set listchars=nbsp:_,trail:\uB7"
-
+autocmd FileType go exec "set listchars=tab:>_,nbsp:_,trail:\uB7"
 
 " get rid of shift ; to get to : commands
 nnoremap ; :
