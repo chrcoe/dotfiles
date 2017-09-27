@@ -5,8 +5,8 @@ sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/to
 # cleanup after oh-my-zsh to use the one in my dotfiles
 rm /home/chrcoe/.zshrc
 
-cd /home/code
-git clone https://github.com/powerline/fonts.git
+# cd /home/code
+# git clone https://github.com/powerline/fonts.git
 
 cd /home/chrcoe/.dotfiles
 script/bootstrap
