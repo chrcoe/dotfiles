@@ -25,13 +25,14 @@ RUN mv ./kubectl /usr/local/bin/kubectl
 
 RUN easy_install pip
 RUN pip install virtualenvwrapper
-RUN pip install --user git+git://github.com/Lokaltog/powerline
+RUN pip install powerline-status
 
 ADD entrypoint /entrypoint
 
 # RUN useradd -g wheel,docker -ms /bin/zsh chrcoe
 RUN useradd -ms /bin/zsh chrcoe
 RUN chown chrcoe:chrcoe /entrypoint
+
 VOLUME ["/home/chrcoe/.dotfiles"]
 USER chrcoe
-WORKDIR "/home/chrcoe/code"
+WORKDIR "/home/chrcoe"
