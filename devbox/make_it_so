@@ -3,5 +3,8 @@
 set -e
 
 docker-compose up -d --build
+echo
 docker-compose ps
+echo
+echo
 docker attach devbox
