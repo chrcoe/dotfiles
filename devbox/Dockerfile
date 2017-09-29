@@ -22,12 +22,16 @@ RUN apt-get install -y \
     tmux \
     tree \
     whois \
+    apt-transport-https \
+    ca-certificates \
     software-properties-common
 
-# repo for installing newer golang versions (ubuntu is stuck on 1.6!)
+# add additional repos as needed ....
 RUN add-apt-repository ppa:gophers/archive && \
-    apt-get update && \
-    apt-get install -y golang-$GO_VERS-go
+    apt-get update
+
+RUN apt-get install -y golang-$GO_VERS-go
+
 
 RUN ln -s /usr/lib/go-$GO_VERS/bin/go /usr/local/bin/go
 
