@@ -15,10 +15,11 @@ services:
             - LANG=en_US.UTF-8
             - LC_CTYPE=en_US.UTF-8
         volumes:
-            - ~/code:/home/chrcoe/code
-            - ~/.dotfiles:/home/chrcoe/.dotfiles
-            - ~/.zsh_history:/home/chrcoe/.zsh_history
-            - ~/.ssh:/home/chrcoe/.ssh
+            # :cached mounts the volumesi n a different way .. supposedly helps performance on mac systems ...
+            - ~/code:/home/chrcoe/code:cached
+            - ~/.dotfiles:/home/chrcoe/.dotfiles:cached
+            - ~/.zsh_history:/home/chrcoe/.zsh_history:cached
+            - ~/.ssh:/home/chrcoe/.ssh:cached
         container_name: devbox
         # drop into a shell to start working ... in the future this will likely start up the tmux session
         # cannot run `$ docker-compose up` because it is tailing all the logs to the local machine...
