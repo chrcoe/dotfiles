@@ -4,6 +4,8 @@ FROM ubuntu:latest
 ARG GO_VERS=1.9
 ARG USERNAME=chrcoe
 
+ENV TERM=xterm-256color
+
 RUN apt-get update --fix-missing
 RUN apt-get install -y \
     gcc \
