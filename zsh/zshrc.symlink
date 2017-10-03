@@ -62,3 +62,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # all go binaries are dropped here ..
 export GOBIN=$HOME/code/go/bin
+
+# set vi bindings for shell
+bindkey -v
+bindkey '^R' history-incremental-search-backward
