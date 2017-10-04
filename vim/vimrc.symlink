@@ -221,13 +221,14 @@ set nowrap
 " ideas from Damian Conway (OSCON 2013):
 " https://www.youtube.com/watch?v=aHm36-na4-4
 
-" scriptencoding utf-8
+scriptencoding utf-8
+set encoding=utf-8
 
 set list
 " whitespace characters
 exec "set listchars=tab:\uBB\uBB,nbsp:_,trail:\uB7"
 " exec "set listchars=nbsp:_,trail:\uB7"
-autocmd FileType go exec "set listchars=tab:>_,nbsp:_,trail:\uB7"
+autocmd FileType go exec "set listchars=tab:°_,nbsp:_,trail:\uB7"
 
 " get rid of shift ; to get to : commands
 nnoremap ; :
