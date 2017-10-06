@@ -113,6 +113,8 @@ let g:go_highlight_extra_types = 1
 autocmd BufNewFile,BufRead *.go setlocal expandtab tabstop=4 shiftwidth=4
 " format on save
 let g:go_fmt_autosave = 1
+" use goimport instead of go-fmt
+let g:go_fmt_command = "goimports"
 autocmd FileType go nmap <leader>r  <Plug>(go-run)
 autocmd FileType go nmap <leader>b  <Plug>(go-build)
 set autowrite
