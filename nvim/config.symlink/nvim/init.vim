@@ -14,6 +14,8 @@ Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/sy
 Plug 'altercation/vim-colors-solarized'
 " Airline (replacement for powerline)
 Plug 'vim-airline/vim-airline'
+" Themes for Airline ...
+Plug 'vim-airline/vim-airline-themes'
 
 
 " put all plugins here to load .... TRY to keep it at a minimum
@@ -47,6 +49,7 @@ let g:solarized_visibility="medium"
 " ++++++------ vim-airline ------++++++
 "
 let g:airline_powerline_fonts = 1
+let g:airline_theme="solarized"
 
 
 
