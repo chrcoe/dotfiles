@@ -1,3 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
-let g:netrw_dirhist_1='/Users/CCoe/code/go/src/helloworld'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/CCoe/code/onshift/os-ansible/roles-next/os_aws_stack'
+let g:netrw_dirhist_2='/Users/CCoe/code/onshift/os-ansible/roles-next/os_aws_stack/tasks'
+let g:netrw_dirhist_3='/Users/CCoe/code/onshift/os-ansible/roles-next/os_aws_stack'
+let g:netrw_dirhist_4='/Users/CCoe/code/onshift/os-ansible/roles-next/os_aws_stack/files'

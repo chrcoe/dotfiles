@@ -12,7 +12,8 @@ Plug 'jodosha/vim-godebug'
 Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 " Solarized colorscheme
 Plug 'altercation/vim-colors-solarized'
-
+" Airline (replacement for powerline)
+Plug 'vim-airline/vim-airline'
 
 
 " put all plugins here to load .... TRY to keep it at a minimum
@@ -42,6 +43,10 @@ set background=dark
 colorscheme solarized
 let g:solarized_visibility="medium"
 
+
+" ++++++------ vim-airline ------++++++
+"
+let g:airline_powerline_fonts = 1
 
 
 
