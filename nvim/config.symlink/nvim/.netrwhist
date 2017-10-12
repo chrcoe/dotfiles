@@ -1,6 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/Users/CCoe/code/onshift/os-ansible/roles-next/os_aws_stack'
-let g:netrw_dirhist_2='/Users/CCoe/code/onshift/os-ansible/roles-next/os_aws_stack/tasks'
-let g:netrw_dirhist_3='/Users/CCoe/code/onshift/os-ansible/roles-next/os_aws_stack'
-let g:netrw_dirhist_4='/Users/CCoe/code/onshift/os-ansible/roles-next/os_aws_stack/files'
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/CCoe/code/onshift/os-ansible/scripts'
+let g:netrw_dirhist_2='/Users/CCoe/code/onshift/os-ansible/scripts/go'
+let g:netrw_dirhist_3='/Users/CCoe/code/onshift/os-ansible/scripts/go/src'
+let g:netrw_dirhist_4='/Users/CCoe/code/onshift/os-ansible/scripts/go/src/dns_tricks'
+let g:netrw_dirhist_5='/Users/CCoe/code/go/src/cloud-formation/cmd'
+let g:netrw_dirhist_6='/Users/CCoe/code/go/src/cloud-formation/cmd/cfn'
