@@ -16,6 +16,8 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline'
 " Themes for Airline ...
 Plug 'vim-airline/vim-airline-themes'
+" Indent guides instead of using weird tab chars via listchar
+Plug 'nathanaelkane/vim-indent-guides'
 
 
 " put all plugins here to load .... TRY to keep it at a minimum
@@ -50,6 +52,11 @@ let g:solarized_visibility="medium"
 "
 let g:airline_powerline_fonts = 1
 let g:airline_theme="solarized"
+
+" ++++++------ vim-indent-guides ------++++++
+"
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_auto_colors = 1
 
 
 
