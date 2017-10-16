@@ -12,8 +12,8 @@ if [ -f /.dockerenv ]; then
     ZSH_THEME="afowler"
     # ZSH_THEME="mrtazz"
 else
-    # ZSH_THEME="agnoster"
-    ZSH_THEME="afowler"
+    ZSH_THEME="agnoster"
+    # ZSH_THEME="afowler"
 fi
 
 
