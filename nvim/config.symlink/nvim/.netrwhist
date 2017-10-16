@@ -1,8 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/Users/CCoe/code/go/src/cloud-formation/cmd'
 let g:netrw_dirhist_2='/Users/CCoe/code/go/src/cloud-formation/cmd/cfn'
 let g:netrw_dirhist_3='/Users/CCoe/code/onshift/os-ansible/scripts/go/src/dns_tricks/fingerprints'
 let g:netrw_dirhist_4='/Users/CCoe/code/go/src/cloud-formation/cmd'
 let g:netrw_dirhist_5='/Users/CCoe/code/go/src/cloud-formation/cmd/cfn'
 let g:netrw_dirhist_6='/Users/CCoe/.dotfiles/nvim/config.symlink/nvim'
+let g:netrw_dirhist_7='/Users/CCoe/code/go/src/cloud-formation/cfn/cmd'
