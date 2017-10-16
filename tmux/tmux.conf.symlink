@@ -86,6 +86,11 @@ bind r source-file ~/.tmux.conf
 # Shift arrow to switch windows
 bind -n S-Left previous-window
 bind -n S-Right next-window
+# bind -n S-L previous-window
+# bind -n S-R next-window
+
+# set tmux delay to 0
+set -s escape-time 0
 
 # Keys to toggle monitoring activity in a window, and synchronize-panes
 bind m set monitor-activity; display 'monitor-activity #{?monitor-activity,on,off}'
