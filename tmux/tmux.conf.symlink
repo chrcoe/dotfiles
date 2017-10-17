@@ -16,7 +16,7 @@ set-option -g allow-rename off
 # 256 colors in terminal
 set -g default-terminal "screen-256color"
 
-# Lock after 15 minutes
+# Lock after 30 minutes
 set -g lock-after-time 1800
 
 # allow vi movement keys (h,j,k,l) to work with buffer
@@ -29,49 +29,62 @@ set -g remain-on-exit on
 set -g xterm-keys on
 
 # Change the prefix key to C-a
+#
+# set -g prefix C-a
 set -g prefix C-b
 # unbind C-b
+# bind C-a send-prefix
 bind C-b send-prefix
 
 # Turn the mouse on, but without copy mode dragging
-set -g mouse on
+# set -g mouse on
 # unbind -n MouseDrag1Pane
 # unbind -temacs-copy MouseDrag1Pane
 # bind -n MouseDrag1Pane send-keys -M
 # bind -n MouseDown1Pane send-keys -M
+
 # turn on copy/paste in tmux using vi commands
 bind P paste-buffer
+# tmux ^2.3
+bind-key -T copy-mode-vi 'v' send -X begin-selection
+bind-key -T copy-mode-vi 'y' send -X copy-selection-and-cancel
+
 # bind-key -t vi-copy 'v' begin-selection
 # bind-key -t vi-copy 'y' copy-selection
 # bind-key -t vi-copy 'r' rectangle-toggle
 
 # Some extra key bindings to select higher numbered windows
-bind -n F1 selectw -t:0
-bind -n F2 selectw -t:1
-bind -n F3 selectw -t:2
-bind -n F4 selectw -t:3
-bind -n F5 selectw -t:4
-bind -n F6 selectw -t:5
-bind -n F7 selectw -t:6
-bind -n F8 selectw -t:7
-bind -n F9 selectw -t:8
-bind -n F10 selectw -t:9
-bind -n F11 selectw -t:10
-bind -n F12 selectw -t:11
+# bind -n F1 selectw -t:0
+# bind -n F2 selectw -t:1
+# bind -n F3 selectw -t:2
+# bind -n F4 selectw -t:3
+# bind -n F5 selectw -t:4
+# bind -n F6 selectw -t:5
+# bind -n F7 selectw -t:6
+# bind -n F8 selectw -t:7
+# bind -n F9 selectw -t:8
+# bind -n F10 selectw -t:9
+# bind -n F11 selectw -t:10
+# bind -n F12 selectw -t:11
 
 # Use Alt-vim keys without prefix key to switch panes
-bind -n C-h select-pane -L
-bind -n C-j select-pane -D
-bind -n C-k select-pane -U
-bind -n C-l select-pane -R
+# bind -n C-h select-pane -L
+# bind -n C-j select-pane -D
+# bind -n C-k select-pane -U
+# bind -n C-l select-pane -R
+
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
 
 # powerline for tmux
 
 run-shell "powerline-daemon -q"
 
-source /usr/local/lib/python2.7/dist-packages/powerline/bindings/tmux/powerline.conf
+# source /usr/local/lib/python2.7/dist-packages/powerline/bindings/tmux/powerline.conf
 source '/usr/local/lib/python2.7/site-packages/powerline/bindings/tmux/powerline.conf'
-source /usr/lib/python3.6/site-packages/powerline/bindings/tmux/powerline.conf
+# source /usr/lib/python3.6/site-packages/powerline/bindings/tmux/powerline.conf
 set-option -g default-terminal "screen-256color"
 
 # Reload tmux config
@@ -83,11 +96,12 @@ bind -n S-Right next-window
 # bind -n S-L previous-window
 # bind -n S-R next-window
 
-# set tmux delay to 0
+# set tmux delay to 0 - there was previously a delay when hitting escape which was very annoying in
+# vim when coding.
 set -s escape-time 0
 
 # Keys to toggle monitoring activity in a window, and synchronize-panes
-bind m set monitor-activity; display 'monitor-activity #{?monitor-activity,on,off}'
+# bind m set monitor-activity; display 'monitor-activity #{?monitor-activity,on,off}'
 bind y set synchronize-panes\; display 'synchronize-panes #{?synchronize-panes,on,off}'
 
 # turn on monitoring on by default
@@ -105,14 +119,10 @@ unbind '"'
 unbind %
 
 # Create default session with a few windows
-new -d -s devbox -n 'code'
-# split-window -h
-# split-window -v
-# splitw -v -p -50 -t 0 bar
-# splitw -h -p -50 -t 0 bar2
-neww -d -n 'shell'
-neww -d -n 'stage'
-neww -d -n 'prod'
-neww -d -n 'devbox'
-neww -d -n 'logs'
-neww -d -n 'irc'
+# new -s devbox -n 'code'
+# splitw -v -p 10
+# # splitw -h -p 15 -t 1
+# # clock-mode -t 2
+# neww -d -n 'shell'
+# neww -d -n 'logs'
+# neww -d -n 'irc'

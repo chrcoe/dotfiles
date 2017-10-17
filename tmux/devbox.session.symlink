@@ -1,0 +1,9 @@
+new -s devbox -n 'code'
+splitw -v -p 15 -t 0
+# splitw -h -p 15 -t 1
+# clock-mode -t 2
+neww -d -n 'shell'
+neww -d -n 'logs'
+neww -d -n 'irc'
+
+kill-session -t trashed
