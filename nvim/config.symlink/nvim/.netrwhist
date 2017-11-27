@@ -1,9 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/Users/ccoe/code/go/src/cloud-formation/cfn'
-let g:netrw_dirhist_2='/Users/ccoe/code/go/src/cloud-formation/cfn/cmd'
-let g:netrw_dirhist_3='/Users/ccoe/code/go/src/os-ansible/roles-next/os_aws_stack/files'
-let g:netrw_dirhist_4='/Users/ccoe/.dotfiles/nvim/config.symlink/nvim'
-let g:netrw_dirhist_5='/Users/ccoe/.dotfiles/nvim/config.symlink/wireshark'
-let g:netrw_dirhist_6='/Users/ccoe/.dotfiles/nvim/config.symlink/wireshark/profiles'
-let g:netrw_dirhist_7='/Users/ccoe/.dotfiles/nvim/config.symlink/wireshark'
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home/ccoe/code/go/src/os-ansible/environments/sandbox/group_vars/all'
+let g:netrw_dirhist_2='/home/ccoe/code/go/src/os-ansible/environments/sandbox/group_vars/openvpn'
+let g:netrw_dirhist_3='/home/ccoe/code/go/src/os-ansible/environments/sandbox/group_vars'
+let g:netrw_dirhist_4='/home/ccoe/code/go/src/os-ansible/environments/sandbox/group_vars/openvpn'
+let g:netrw_dirhist_5='/home/ccoe/code/go/src/os-ansible/environments/sandbox/group_vars/engage_db'
+let g:netrw_dirhist_6='/home/ccoe/code/go/src/rsa-test/pki/private'
