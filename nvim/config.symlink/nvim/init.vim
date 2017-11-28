@@ -111,6 +111,9 @@ hi def link MyTodo Todo
 " followed by :cw to show the results in a buffer
 " this would allow searching and quick jumping to whatever todo you need
 
+" NOTE: possibly this will suffice for now ?
+map <Leader>t :vimgrep /\v<(FIXME\|NOTE\|TODO\|OPTIMIZE\|XXX)/ % \| cw<CR>
+
 
 " ============================ general key renampping BELOW THIS LINE ==============================
 
