@@ -102,7 +102,7 @@ set modeline                        " turn on modelines
 " custom todo list
 augroup vimrc_todo
     au!
-    au Syntax * syn match MyTodo /\v<(FIXME|NOTE|TODO|OPTIMIZE|XXX)/
+    au Syntax * syn match MyTodo /\v<(FIXME|NOTE|TODO|OPTIMIZE|XXX|REFACTOR):/
           \ containedin=.*Comment,vimCommentTitle
 augroup END
 hi def link MyTodo Todo
@@ -112,7 +112,7 @@ hi def link MyTodo Todo
 " this would allow searching and quick jumping to whatever todo you need
 
 " NOTE: possibly this will suffice for now ?
-map <Leader>t :vimgrep /\v<(FIXME\|NOTE\|TODO\|OPTIMIZE\|XXX)/ % \| cw<CR>
+map <Leader>t :vimgrep /\v<(FIXME\|NOTE\|TODO\|OPTIMIZE\|XXX\|REFACTOR):/ % \| cw<CR>
 
 
 " ============================ general key renampping BELOW THIS LINE ==============================
