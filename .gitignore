@@ -24,4 +24,5 @@ sup.symlink/exception-log.txt
 sup.symlink/lock
 *.mbox
 
+vim/vim.symlink/.netrwhist
 nvim/config.symlink/nvim/.netrwhist
