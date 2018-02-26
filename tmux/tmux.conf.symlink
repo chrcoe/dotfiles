@@ -28,6 +28,9 @@ set -g remain-on-exit on
 # Turn on xterm-keys so that additional function keys get escape sequences
 set -g xterm-keys on
 
+# set the history limit higher (be careful setting this very high when using many panes/windows
+# because it will increase the RAM usage accordingly!!) - the size before appeared to be 1985
+set-option -g history-limit 3000
 # Change the prefix key to C-a
 #
 # set -g prefix C-a
@@ -82,9 +85,9 @@ bind l select-pane -R
 
 run-shell "powerline-daemon -q"
 
-# source /usr/local/lib/python2.7/dist-packages/powerline/bindings/tmux/powerline.conf
+source '/usr/local/lib/python2.7/dist-packages/powerline/bindings/tmux/powerline.conf'
 source '/usr/local/lib/python2.7/site-packages/powerline/bindings/tmux/powerline.conf'
-# source /usr/lib/python3.6/site-packages/powerline/bindings/tmux/powerline.conf
+# source /usr/lib/python3.5/site-packages/powerline/bindings/tmux/powerline.conf
 set-option -g default-terminal "screen-256color"
 
 # Reload tmux config

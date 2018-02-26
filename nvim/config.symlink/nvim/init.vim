@@ -8,7 +8,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'fatih/vim-go', { 'tag': '*' }
 " Go debugger
 Plug 'jodosha/vim-godebug'
-" Go completion (not sure if I want to keep this or not ...)
+" Go completion (might switch to deoplete.nvim + deoplete-go)
 Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 " Solarized colorscheme
 Plug 'altercation/vim-colors-solarized'
@@ -41,6 +41,19 @@ let g:go_fmt_command = "goimports"
 autocmd FileType go nmap <leader>r  <Plug>(go-run)
 autocmd FileType go nmap <leader>b  <Plug>(go-build)
 set autowrite
+" set syntax highlighting for various things .. not sure i want all of these but we'll see:
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_types = 1
+" highlight items with the same name when cursor is on the word
+let g:go_auto_sameids = 1
+" show type info by default of the item your cursor is on
+let g:go_auto_type_info = 1
 
 " ++++++------ vim-colors-solarized ------++++++
 "
@@ -86,7 +99,20 @@ highlight ColorColumn ctermbg=black " make it black
 set modeline                        " turn on modelines
 
 
+" custom todo list
+augroup vimrc_todo
+    au!
+    au Syntax * syn match MyTodo /\v<(FIXME|NOTE|TODO|OPTIMIZE|XXX|REFACTOR):/
+          \ containedin=.*Comment,vimCommentTitle
+augroup END
+hi def link MyTodo Todo
+" TODO: I want to have the ability to call :Todo which will run:
+" :vimgrep <whatever the match is> <whatever the current file is>
+" followed by :cw to show the results in a buffer
+" this would allow searching and quick jumping to whatever todo you need
 
+" NOTE: possibly this will suffice for now ?
+map <Leader>t :vimgrep /\v<(FIXME\|NOTE\|TODO\|OPTIMIZE\|XXX\|REFACTOR):/ % \| cw<CR>
 
 
 " ============================ general key renampping BELOW THIS LINE ==============================

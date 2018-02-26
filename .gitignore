@@ -5,6 +5,8 @@ atom.symlink/packages
 atom.symlink/storage
 atom.symlink/themes
 
+nvim/config.symlink/configstore
+
 git/gitconfig.symlink
 
 moc.symlink/pid
@@ -21,3 +23,6 @@ sup.symlink/log
 sup.symlink/exception-log.txt
 sup.symlink/lock
 *.mbox
+
+vim/vim.symlink/.netrwhist
+nvim/config.symlink/nvim/.netrwhist
