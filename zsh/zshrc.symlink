@@ -55,7 +55,7 @@ source $ZSH/oh-my-zsh.sh
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /home/chrcoe/.nvm/versions/node/v8.2.1/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /home/chrcoe/.nvm/versions/node/v8.2.1/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
 
-eval "$(rbenv init -)"
+# eval "$(rbenv init -)"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -75,12 +75,15 @@ bindkey '^R' history-incremental-search-backward
 # fi
 
 # SSH-agent stuff via GPG-agent (requires yubikey plugged into mac) - but if on the devbox, do not
-# load this...
+# load this... REQUIRES GPG >= 2.1
+activateGPGAgent() {
+    export GNUPGHOME=$HOME/.gnupg
+    export SSH_AUTH_SOCK=$GNUPGHOME/S.gpg-agent.ssh
+    eval $( gpg-agent --daemon --enable-ssh-support --log-file ~/.gnupg/gpg-agent.log )
+}
+
 if [ "$HOST" = devbox ]; then
     printf '%s\n' "on devbox, NOT loading gpg-agent!"
 else
-    eval $(gpg-agent --daemon --enable-ssh-support --use-standard-socket \
-      --log-file ~/.gnupg/gpg-agent.log --write-env-file)
-    alias start-gpg-agent='eval $(gpg-agent --daemon --enable-ssh-support --use-standard-socket \
-      --log-file ~/.gnupg/gpg-agent.log --write-env-file)'
+    activateGPGAgent
 fi
