@@ -76,7 +76,7 @@ bindkey '^R' history-incremental-search-backward
 
 # SSH-agent stuff via GPG-agent (requires yubikey plugged into mac) - but if on the devbox, do not
 # load this...
-if [ "$HOSTNAME" = devbox ]; then
+if [ "$HOST" = devbox ]; then
     printf '%s\n' "on devbox, NOT loading gpg-agent!"
 else
     eval $(gpg-agent --daemon --enable-ssh-support --use-standard-socket \
