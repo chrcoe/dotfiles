@@ -68,13 +68,19 @@ export GOBIN=$HOME/code/go/bin
 bindkey -v
 bindkey '^R' history-incremental-search-backward
 
-if [[ -n $SSH_CONNECTION ]]; then
-    echo "you are in an SSH connection"
-else
-    echo "you are not in an SSH connection"
-fi
+# if [[ -n $SSH_CONNECTION ]]; then
+#     echo "you are in an SSH connection"
+# else
+#     echo "you are not in an SSH connection"
+# fi
 
-# # add ssh-agent
-# eval `ssh-agent`
-# # add all onshift related keys to the agent
-# ssh-add -K ~/.ssh/onshift*
+# SSH-agent stuff via GPG-agent (requires yubikey plugged into mac) - but if on the devbox, do not
+# load this...
+if [ "$HOSTNAME" = devbox ]; then
+    printf '%s\n' "on devbox, NOT loading gpg-agent!"
+else
+    eval $(gpg-agent --daemon --enable-ssh-support --use-standard-socket \
+      --log-file ~/.gnupg/gpg-agent.log --write-env-file)
+    alias start-gpg-agent='eval $(gpg-agent --daemon --enable-ssh-support --use-standard-socket \
+      --log-file ~/.gnupg/gpg-agent.log --write-env-file)'
+fi
