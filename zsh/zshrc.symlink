@@ -86,6 +86,7 @@ if [ "$HOST" = devbox ]; then
 else
     # maybe ask the user which key is inserted and then choose accordingly ...
     export GNUPGHOME=$HOME/.gnupg_stubs_6108793
+    ln -s $GNUPGHOME $HOME/.gnupg
     activateGPGAgent
 fi
 
