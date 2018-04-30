@@ -1,4 +1,8 @@
+# pip requires --> $ apt install python-pip (for py2.7) or $ apt install python3-pip (for py3.6)
+# virtualenvwrapper requires --> $ pip install virtualenvwrapper --upgrade --user
 export WORKON_HOME=~/.venvs
+# future me: pip install virtualenvwrapper installs to $HOME/.local
+export PATH=$PATH:$HOME/.local/bin
 source $(which virtualenvwrapper.sh)
 export VISUAL="vim"
 
