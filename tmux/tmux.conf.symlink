@@ -82,12 +82,15 @@ bind k select-pane -U
 bind l select-pane -R
 
 # powerline for tmux
-
 run-shell "powerline-daemon -q"
+
+# run-shell "repository_root=$(pip show powerline-status | grep Location | cut -d " " -f2)"
+# run-shell "echo $repository_root"
 
 source '/usr/local/lib/python2.7/dist-packages/powerline/bindings/tmux/powerline.conf'
 source '/usr/local/lib/python2.7/site-packages/powerline/bindings/tmux/powerline.conf'
-# source /usr/lib/python3.5/site-packages/powerline/bindings/tmux/powerline.conf
+source '/home/ccoe/.local/lib/python2.7/site-packages/powerline/bindings/tmux/powerline.conf'
+source '/usr/lib/python3.5/site-packages/powerline/bindings/tmux/powerline.conf'
 set-option -g default-terminal "screen-256color"
 
 # Reload tmux config

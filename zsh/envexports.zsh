@@ -3,8 +3,11 @@
 export WORKON_HOME=~/.venvs
 # future me: pip install virtualenvwrapper installs to $HOME/.local
 export PATH=$PATH:$HOME/.local/bin
+export PATH=$PATH:/usr/local/go/bin
 source $(which virtualenvwrapper.sh)
 export VISUAL="vim"
+
+export POWERLINE_CONFIG_COMMAND=$(which powerline-config)
 
 export MSF_DATABASE_CONFIG=/opt/metasploit/config/database.yml
 

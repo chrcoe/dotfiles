@@ -5,7 +5,7 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
 " Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
-Plug 'fatih/vim-go', { 'tag': '*' }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " Go debugger
 Plug 'jodosha/vim-godebug'
 " Go completion (might switch to deoplete.nvim + deoplete-go)
