@@ -81,7 +81,7 @@ activateGPGAgent() {
     eval $( gpg-agent --daemon --enable-ssh-support --log-file ~/.gnupg/gpg-agent.log )
 }
 
-if [ "$HOST" = devbox ]; then
+if [ "$HOST" = devbox || "$HOST" = devbox_centos ]; then
     printf '%s\n' "on devbox, NOT loading gpg-agent!"
 else
     # maybe ask the user which key is inserted and then choose accordingly ...
