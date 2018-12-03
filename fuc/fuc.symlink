@@ -1,2 +1,8 @@
+# general troubleshooting stuff
+strace -ttT <command> # runs strace on a command showing time with microseconds and systime time in each call
+strace -ttTp <PID> # connects strace to a running PID showing time with microseconds and systime time in each call
 netstat -tulpn # shows numeric (does not resolve names) LISTENING TCP and UDP sockets and displays PID/prog name
 netstat -tuapn # shows ALL numeric (does not resolve names) TCP and UDP sockets and displays PID/prog name
+# ansible stuff
+ansible <group_name> -i inventory/production_bs --vault-password-file ~/.vault_onshift_production -m shell -b -a "supervisorctl status"
+ansible schedule_app -i inventory/production_bs -b -m shell -a 'echo 1 > /usr/local/bin/scheduler_app.reset_needed'
