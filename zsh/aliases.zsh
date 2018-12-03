@@ -10,3 +10,5 @@ alias fixthetime="sudo systemctl restart network.service && sudo systemctl stop 
 
 alias ll="ls -alhi"
 alias cleankernels="sudo package-cleanup --oldkernels --count=1"
+
+alias fuc="cat $HOME/.fuc | grep -i"

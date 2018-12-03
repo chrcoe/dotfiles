@@ -1,0 +1,2 @@
+netstat -tulpn # shows numeric (does not resolve names) LISTENING TCP and UDP sockets and displays PID/prog name
+netstat -tuapn # shows ALL numeric (does not resolve names) TCP and UDP sockets and displays PID/prog name
