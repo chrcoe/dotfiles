@@ -7,6 +7,8 @@ export PATH=$PATH:/usr/local/go/bin
 source $(which virtualenvwrapper.sh)
 export VISUAL="vim"
 
+export HOMEBREW_NO_ANALYTICS=1
+
 export POWERLINE_CONFIG_COMMAND=$(which powerline-config)
 
 export MSF_DATABASE_CONFIG=/opt/metasploit/config/database.yml
