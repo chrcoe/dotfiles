@@ -14,3 +14,4 @@ psql -U root -p 6432 pgbouncer # log in as pgbouncer
 psql onshift # log in as onshift on schedule-db
 select xact_start from pg_stat_activity where xact_start <= now() - interval '6 hours' order by xact_start asc; # lookup transaction starts for pg_stat
 postgres@schedule-db00:~/9.6/main/pg_xlog$ ls -lt | tail -n 10 # look at logs for transactions
+select client_addr, state, state_change, xact_start from pg_stat_activity where xact_start <= now() - interval '6 hours' order by xact_start asc; # idle in transaction with client_addr for cross ref
