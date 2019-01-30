@@ -8,8 +8,9 @@ ansible <group_name> -i inventory/production_bs --vault-password-file ~/.vault_o
 ansible schedule_app -i inventory/production_bs -b -m shell -a 'echo 1 > /usr/local/bin/scheduler_app.reset_needed'
 # general playbook run (legacy) the -C is check mode ... always run in checkmode first
 AWS_PROFILE=<profile> ./Ansible-playbook -i inventory/<env> --vault-password-file ~/.vault_onshift_<stage|production> <playbook file> -e "global_do_install=true" -t <specific tags to call if any> -D -C
-# worker "clean sweep"
+# "clean sweeps" (rolling restarts for worker/auth_app/whatever
 ansible worker -i inventory/production_bs --become -m shell -a "supervisorctl stop all && sleep 10; pkill -9 -u celery_worker; service pgbouncer stop && sleep 5; service pgbouncer start && supervisorctl start all" #cleansweep
+ansible auth_webnode -i inventory/production_bs --become -m shell -a "supervisorctl stop all && sleep 5; service pgbouncer stop && sleep 5; service pgbouncer start && supervisorctl start all" #auth_app_cleansweep
 psql -U root -p 6432 pgbouncer # log in as pgbouncer
 psql onshift # log in as onshift on schedule-db
 select xact_start from pg_stat_activity where xact_start <= now() - interval '6 hours' order by xact_start asc; # lookup transaction starts for pg_stat
