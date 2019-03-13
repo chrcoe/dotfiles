@@ -13,6 +13,7 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_GITHUB_API=1
 export HOMEBREW_NO_INSECURE_REDIRECT=1
 
+export LC_ALL="en_US.UTF-8"
 export POWERLINE_CONFIG_COMMAND=$(which powerline-config)
 
 export MSF_DATABASE_CONFIG=/opt/metasploit/config/database.yml
