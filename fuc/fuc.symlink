@@ -4,7 +4,7 @@ strace -ttTp <PID> # connects strace to a running PID showing time with microsec
 netstat -tulpn # shows numeric (does not resolve names) LISTENING TCP and UDP sockets and displays PID/prog name
 netstat -tuapn # shows ALL numeric (does not resolve names) TCP and UDP sockets and displays PID/prog name
 # ansible stuff
-ansible <group_name> -i inventory/production_bs --vault-password-file ~/.vault_onshift_production -m shell -b -a "supervisorctl status"
+ansible <group_name> -i inventory/production_bs --vault-password-file ~/.vault_onshift_production -m shell -b -a "supervisorctl status" # ad hoc adhoc
 ansible schedule_app -i inventory/production_bs -b -m shell -a 'echo 1 > /usr/local/bin/scheduler_app.reset_needed'
 # general playbook run (legacy) the -C is check mode ... always run in checkmode first
 AWS_PROFILE=<profile> ./Ansible-playbook -i inventory/<env> --vault-password-file ~/.vault_onshift_<stage|production> <playbook file> -e "global_do_install=true" -t <specific tags to call if any> -D -C
