@@ -1,7 +1,7 @@
 /home/ccoe/.local/lib/python2.7/site-packages/powerline/bindings/tmux|13|1552481110
 /home/ccoe/code/onshift/auth-app|14|1547664229
 /home/ccoe/code/onshift/os-tf-vpc|154|1545321924
-/home/ccoe/.dotfiles|105|1553080696
+/home/ccoe/.dotfiles|111|1554467774
 /home/ccoe/code/onshift/os-ansible/roles/secrets/vars/environments/production_bs|11|1543684605
 /home/ccoe/code/onshift/os-tf-vpc/tf|89|1544819433
 /home/ccoe/code/onshift/os-tf-dns|58|1547058907
@@ -25,5 +25,4 @@
 /home/ccoe/code/onshift/os-tf-vpc/peering|287|1545319695
 /home/ccoe/code/onshift/os-tf-dns/tf|16|1545319711
 /home/ccoe/code/onshift/jenkins-pipeline-common|31|1547232546
-/home/ccoe/code/onshift/engage|8|1547228125
 /home/ccoe/code/onshift/koala|931|1551795200
