@@ -59,7 +59,7 @@ let g:go_auto_type_info = 1
 "
 syntax enable
 set background=dark
-colorscheme solarized
+"colorscheme solarized
 let g:solarized_visibility="medium"
 
 
