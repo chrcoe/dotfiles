@@ -45,7 +45,7 @@ setup_gitconfig () {
 
     sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" -e "s/GIT_CREDENTIAL_HELPER/$git_credential/g" git/gitconfig.symlink.example > git/gitconfig.symlink
 
-    git config core.editor=nvim
+    git config core.editor nvim
     success 'gitconfig'
   fi
 }
@@ -153,8 +153,7 @@ then
   fi
 fi
 
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
->     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 echo ''
 echo '  All installed!'
