@@ -21,6 +21,7 @@ alias gb='git branch'
 alias gst='git status -sb' # upgrade your git if -sb breaks for you. it's fun.
 alias gs='git status -sb' # upgrade your git if -sb breaks for you. it's fun.
 alias ga='git add'
+alias gaa='git add --all'
 alias grm='git rm --cached'
 alias gsyncmaster='git fetch upstream && git checkout master && git merge upstream/master'
 alias gsyncdevelop='git fetch upstream && git checkout develop && git merge upstream/develop'
