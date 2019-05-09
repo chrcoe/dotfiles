@@ -11,7 +11,7 @@ Plug 'jodosha/vim-godebug'
 " Go completion (might switch to deoplete.nvim + deoplete-go)
 Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 " Solarized colorscheme
-Plug 'altercation/vim-colors-solarized'
+" Plug 'altercation/vim-colors-solarized'
 " Airline (replacement for powerline)
 Plug 'vim-airline/vim-airline'
 " Themes for Airline ...
