@@ -96,5 +96,8 @@ fi
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export RVM_DIR="$HOME/.rvm"
+source $RVM_DIR/scripts/rvm
 export PATH="$PATH:$HOME/.rvm/bin"
 umask 077
+
