@@ -25,3 +25,4 @@ alias gaa='git add --all'
 alias grm='git rm --cached'
 alias gsyncmaster='git fetch upstream && git checkout master && git merge upstream/master'
 alias gsyncdevelop='git fetch upstream && git checkout develop && git merge upstream/develop'
+alias gprunelocal="git branch --merged | grep -v master >/tmp/merged-branches && vim /tmp/merged-branches && xargs git branch -d </tmp/merged-branches"
