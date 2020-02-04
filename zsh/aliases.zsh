@@ -1,7 +1,9 @@
 alias reload!='. ~/.zshrc'
 alias open='xdg-open'
 alias vim=nvim
+alias view='nvim -R'
 alias vimdiff='nvim -d'
+alias vimsplit='nvim -O'
 alias devbox!='. ~/.dotfiles/tmux/devbox'
 alias tree='tree -Capug --dirsfirst'
 alias greptodo="grep -RE 'TODO:|FIXME:|NOTE:|OPTIMIZE:|XXX:|REFACTOR:'"
