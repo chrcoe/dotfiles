@@ -26,3 +26,6 @@ sup.symlink/lock
 
 vim/vim.symlink/.netrwhist
 nvim/config.symlink/nvim/.netrwhist
+
+zsh/z.symlink
+vim/fonts.symlink/.uuid
