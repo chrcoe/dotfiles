@@ -35,6 +35,10 @@ call plug#end()
 
 " ++++++------ vim-go ------++++++
 "
+
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
+
 let g:go_fmt_autosave = 1
 " use goimports instead of go-fmt
 let g:go_fmt_command = "goimports"
@@ -114,6 +118,9 @@ hi def link MyTodo Todo
 
 " NOTE: possibly this will suffice for now ?
 map <Leader>t :vimgrep /\v<(FIXME\|NOTE\|TODO\|OPTIMIZE\|XXX\|REFACTOR):/ % \| cw<CR>
+
+" this will allow .yaml.j2 to be read as yaml syntactically speaking
+:autocmd BufRead,BufNewFile   *.yaml.j2 set syntax=yaml ts=2 sw=2
 
 
 " ============================ general key renampping BELOW THIS LINE ==============================
