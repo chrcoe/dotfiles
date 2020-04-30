@@ -121,6 +121,7 @@ map <Leader>t :vimgrep /\v<(FIXME\|NOTE\|TODO\|OPTIMIZE\|XXX\|REFACTOR):/ % \| c
 
 " this will allow .yaml.j2 to be read as yaml syntactically speaking
 :autocmd BufRead,BufNewFile   *.yaml.j2 set syntax=yaml ts=2 sw=2
+:autocmd BufRead,BufNewFile   *.yaml set syntax=yaml ts=2 sw=2
 
 
 " ============================ general key renampping BELOW THIS LINE ==============================
