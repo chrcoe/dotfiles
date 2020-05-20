@@ -87,12 +87,37 @@ set diffopt+=vertical
 
 " ++++++------ goyo + limelight integration ------++++++
 "
+
+
+" function! s:goyo_enter()
+"   let b:quitting = 0
+"   let b:quitting_bang = 0
+"   autocmd QuitPre <buffer> let b:quitting = 1
+"   cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
+" endfunction
+"
+" function! s:goyo_leave()
+"   " Quit Vim if this is the only remaining buffer
+"   if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
+"     if b:quitting_bang
+"       qa!
+"     else
+"       qa
+"     endif
+"   endif
+" endfunction
+"
+" autocmd! User GoyoEnter call <SID>goyo_enter()
+" autocmd! User GoyoLeave call <SID>goyo_leave()
+
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 
 " Color name (:help cterm-colors) or ANSI code
 let g:limelight_conceal_ctermfg = 'gray'
 let g:limelight_conceal_ctermfg = 240
+
+let g:goyo_width = 104
 
 " Default: 0.7
 let g:limelight_default_coefficient = 0.5
@@ -109,6 +134,10 @@ let g:limelight_default_coefficient = 0.5
 " Highlighting priority (default: 10)
 "   Set it to -1 not to overrule hlsearch
 let g:limelight_priority = -1
+
+" for journal
+autocmd BufRead,BufNewFile   *_day* set syntax=markdown ts=4 sw=4
+autocmd BufRead,BufNewFile   *_day* Goyo
 
 
 " ============================= general config stuff BELOW THIS LINE ===============================
@@ -148,9 +177,12 @@ hi def link MyTodo Todo
 map <Leader>t :vimgrep /\v<(FIXME\|NOTE\|TODO\|OPTIMIZE\|XXX\|REFACTOR):/ % \| cw<CR>
 
 " this will allow .yaml.j2 to be read as yaml syntactically speaking
-:autocmd BufRead,BufNewFile   *.yaml.j2 set syntax=yaml ts=2 sw=2
-:autocmd BufRead,BufNewFile   *.yaml set syntax=yaml ts=2 sw=2
-:autocmd BufRead,BufNewFile   *.j2 set syntax=yaml ts=2 sw=2
+autocmd BufRead,BufNewFile   *.yaml.j2 set syntax=yaml ts=2 sw=2
+autocmd BufRead,BufNewFile   *.yaml set syntax=yaml ts=2 sw=2
+autocmd BufRead,BufNewFile   *.j2 set syntax=yaml ts=2 sw=2
+
+" markdown for md files
+autocmd BufRead,BufNewFile   *.md set syntax=markdown ts=4 sw=4
 
 " ============================ general key renampping BELOW THIS LINE ==============================
 
