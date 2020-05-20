@@ -22,6 +22,8 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'tpope/vim-fugitive'
 " goyo for distraction free writing
 Plug 'junegunn/goyo.vim'
+" limelight for distraction free writing
+Plug 'junegunn/limelight.vim'
 
 " put all plugins here to load .... TRY to keep it at a minimum
 
@@ -83,6 +85,31 @@ let g:indent_guides_auto_colors = 1
 "
 set diffopt+=vertical
 
+" ++++++------ goyo + limelight integration ------++++++
+"
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+
+" Color name (:help cterm-colors) or ANSI code
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_ctermfg = 240
+
+" Default: 0.5
+let g:limelight_default_coefficient = 0.7
+
+" Number of preceding/following paragraphs to include (default: 0)
+"let g:limelight_paragraph_span = 1
+
+" Beginning/end of paragraph
+"   When there's no empty line between the paragraphs
+"   and each paragraph starts with indentation
+"let g:limelight_bop = '^\s'
+"let g:limelight_eop = '\ze\n^\s'
+
+" Highlighting priority (default: 10)
+"   Set it to -1 not to overrule hlsearch
+let g:limelight_priority = -1
+
 
 " ============================= general config stuff BELOW THIS LINE ===============================
 
@@ -124,7 +151,6 @@ map <Leader>t :vimgrep /\v<(FIXME\|NOTE\|TODO\|OPTIMIZE\|XXX\|REFACTOR):/ % \| c
 :autocmd BufRead,BufNewFile   *.yaml.j2 set syntax=yaml ts=2 sw=2
 :autocmd BufRead,BufNewFile   *.yaml set syntax=yaml ts=2 sw=2
 :autocmd BufRead,BufNewFile   *.j2 set syntax=yaml ts=2 sw=2
-
 
 " ============================ general key renampping BELOW THIS LINE ==============================
 
