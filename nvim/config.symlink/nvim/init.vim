@@ -20,7 +20,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'nathanaelkane/vim-indent-guides'
 " vim fugitive for git tricks in vim
 Plug 'tpope/vim-fugitive'
-
+" goyo for distraction free writing
+Plug 'junegunn/goyo.vim'
 
 " put all plugins here to load .... TRY to keep it at a minimum
 
