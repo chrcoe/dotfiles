@@ -79,6 +79,7 @@ bindkey '^R' history-incremental-search-backward
 # SSH-agent stuff via GPG-agent (requires yubikey plugged into mac) - but if on the devbox, do not
 # load this... REQUIRES GPG >= 2.1
 activateGPGAgent() {
+#    eval $( ssh-agent )
     export SSH_AUTH_SOCK=$GNUPGHOME/S.gpg-agent.ssh
     eval $( gpg-agent --daemon --enable-ssh-support --log-file ~/.gnupg/gpg-agent.log )
 }
