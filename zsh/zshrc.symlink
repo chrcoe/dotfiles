@@ -89,7 +89,8 @@ activateGPGAgent() {
     eval $( ssh-agent )
     sleep 1
     export SSH_AUTH_SOCK=$GNUPGHOME/S.gpg-agent.ssh
-    eval $( gpg-agent --daemon --enable-ssh-support --log-file ~/.gnupg/gpg-agent.log )
+    # eval $( gpg-agent --daemon --enable-ssh-support --log-file ~/.gnupg/gpg-agent.log )
+    eval $( gpg-agent --daemon --options ~/.gnupg/gpg-agent.conf --log-file ~/.gnupg/gpg-agent.log )
 }
 
 if [[ "$HOST" =~ '^devbox*' ]]; then
