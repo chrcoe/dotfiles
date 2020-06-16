@@ -92,8 +92,8 @@ if [[ "$HOST" =~ '^devbox*' ]]; then
 else
     export GNUPGHOME=$HOME/.gnupg
     ln -s $HOME/.gnupg_stubs_6108793 $HOME/.gnupg
-    GPG_TTY=$(tty)
-    export GPG_TTY
+#    GPG_TTY=$(tty)
+#    export GPG_TTY
     activateGPGAgent
 fi
 
