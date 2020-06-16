@@ -76,29 +76,23 @@ bindkey '^R' history-incremental-search-backward
 #     echo "you are not in an SSH connection"
 # fi
 
-# SSH-agent stuff via GPG-agent (requires yubikey plugged into mac) - but if on the devbox, do not
-# load this... REQUIRES GPG >= 2.1
 activateGPGAgent() {
-#     if [ -z ${SSH_AGENT_PID+x} ]; then
-#         echo "var is unset, starting ssh-agent...";
-#         eval $( ssh-agent )
-#     else
-#         echo "var is set to '$SSH_AGENT_PID' NOT running a new ssh-agent";
-#     fi
-    sudo killall gpg-agent ssh-agent
-    eval $( ssh-agent )
-    sleep 1
-    export SSH_AUTH_SOCK=$GNUPGHOME/S.gpg-agent.ssh
-    # eval $( gpg-agent --daemon --enable-ssh-support --log-file ~/.gnupg/gpg-agent.log )
+#    this was only needed when I setup the raspberry pi desktop, possibly a version conflict?
+#    sudo killall gpg-agent ssh-agent
+#    eval $( ssh-agent )
+#    sleep 1
+    SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+    export SSH_AUTH_SOCK
     eval $( gpg-agent --daemon --options ~/.gnupg/gpg-agent.conf --log-file ~/.gnupg/gpg-agent.log )
 }
 
 if [[ "$HOST" =~ '^devbox*' ]]; then
     printf '%s\n' "on devbox, NOT loading gpg-agent!"
 else
-    # maybe ask the user which key is inserted and then choose accordingly ...
-    export GNUPGHOME=$HOME/.gnupg_stubs_6108793
-    ln -s $GNUPGHOME $HOME/.gnupg
+    export GNUPGHOME=$HOME/.gnupg
+    ln -s $HOME/.gnupg_stubs_6108793 $HOME/.gnupg
+    GPG_TTY=$(tty)
+    export GPG_TTY
     activateGPGAgent
 fi
 
