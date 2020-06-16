@@ -29,3 +29,5 @@ nvim/config.symlink/nvim/.netrwhist
 
 zsh/z.symlink
 vim/fonts.symlink/.uuid
+
+journal.symlink/entries
