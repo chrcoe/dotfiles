@@ -77,23 +77,19 @@ bindkey '^R' history-incremental-search-backward
 # fi
 
 activateGPGAgent() {
-#    this was only needed when I setup the raspberry pi desktop, possibly a version conflict?
-#    sudo killall gpg-agent ssh-agent
-#    eval $( ssh-agent )
-#    sleep 1
     SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
     export SSH_AUTH_SOCK
     eval $( gpg-agent --daemon --options ~/.gnupg/gpg-agent.conf --log-file ~/.gnupg/gpg-agent.log )
-    # eval $( gpg-agent --daemon --log-file ~/.gnupg/gpg-agent.log )
 }
 
 if [[ "$HOST" =~ '^devbox*' ]]; then
     printf '%s\n' "on devbox, NOT loading gpg-agent!"
 else
     export GNUPGHOME=$HOME/.gnupg
-    #ln -s $HOME/.gnupg_stubs_6108793 $HOME/.gnupg
-#    GPG_TTY=$(tty)
-#    export GPG_TTY
+    # ln -s $HOME/.gnupg_stubs_6108793 $HOME/.gnupg
+    #  GPG_TTY being locked screws up when you're using multiple TTY sessions it seems
+    # GPG_TTY=$(tty)
+    # export GPG_TTY
     activateGPGAgent
 fi
 
