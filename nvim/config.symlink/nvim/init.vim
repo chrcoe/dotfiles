@@ -22,7 +22,8 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'tpope/vim-fugitive'
 " goyo for distraction free writing
 Plug 'junegunn/goyo.vim'
-" limelight for distraction free writing
+" limelight for distraction free writing (goes with goyo, but could possibly by used with
+" code)
 Plug 'junegunn/limelight.vim'
 
 " put all plugins here to load .... TRY to keep it at a minimum
@@ -117,10 +118,10 @@ autocmd! User GoyoLeave Limelight!
 let g:limelight_conceal_ctermfg = 'gray'
 let g:limelight_conceal_ctermfg = 240
 
-let g:goyo_width = 104
+let g:goyo_width = 94
 
 " Default: 0.7
-let g:limelight_default_coefficient = 0.5
+let g:limelight_default_coefficient = 0.2
 
 " Number of preceding/following paragraphs to include (default: 0)
 "let g:limelight_paragraph_span = 1
@@ -155,7 +156,7 @@ set tabstop=4                       " make tab length 4 spaces instead of 8
 set shiftwidth=4                    " move 4 spaces when indenting with < and >
 set expandtab                       " turn tabs into spaces
 set nowrap                          " turn off window wrapping
-set textwidth=100                   " set the textwidth to be 100 char
+set textwidth=90                    " set the textwidth to be 100 char (originally, before customized)
 set colorcolumn=+1                  " colorcolumn to be +1 of textwidth
 highlight ColorColumn ctermbg=black " make it black
 set modeline                        " turn on modelines

@@ -14,3 +14,8 @@ lxtask.conf
 menus
 openbox
 qt5ct
+Mousepad
+dconf
+gpicview
+libfm
+mimeapps.list
