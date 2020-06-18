@@ -91,7 +91,7 @@ if [[ "$HOST" =~ '^devbox*' ]]; then
     printf '%s\n' "on devbox, NOT loading gpg-agent!"
 else
     export GNUPGHOME=$HOME/.gnupg
-    ln -s $HOME/.gnupg_stubs_6108793 $HOME/.gnupg
+    #ln -s $HOME/.gnupg_stubs_6108793 $HOME/.gnupg
 #    GPG_TTY=$(tty)
 #    export GPG_TTY
     activateGPGAgent
