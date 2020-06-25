@@ -139,6 +139,8 @@ let g:limelight_priority = -1
 " for journal
 autocmd BufRead,BufNewFile   *_day* set syntax=markdown ts=4 sw=4
 autocmd BufRead,BufNewFile   *_day* Goyo
+autocmd BufRead,BufNewFile   *journal/entries/* set syntax=markdown ts=4 sw=4
+autocmd BufRead,BufNewFile   *journal/entries/* Goyo
 
 
 " ============================= general config stuff BELOW THIS LINE ===============================
