@@ -18,4 +18,4 @@ alias fuc="cat $HOME/.fuc | grep -i"
 alias startvm='VBoxManage startvm "devbox" --type headless'
 alias stopvm='VBoxManage controlvm "devbox" poweroff --type headless'
 alias listvm='VBoxManage list runningvms'
-alias sshvm='ssh devbox-centos'
+alias sshvm='ssh devbox'
