@@ -27,3 +27,4 @@ alias gsyncmaster='git fetch upstream && git checkout master && git merge upstre
 alias gsyncdevelop='git fetch upstream && git checkout develop && git merge upstream/develop'
 #alias gprunelocal="git branch --merged | grep -v master | grep -v staging >/tmp/merged-branches && vim /tmp/merged-branches && xargs -r git branch -d </tmp/merged-branches"
 alias gprunelocal="git branch -vv | grep gone | cut -d ' ' -f3 > /tmp/branch-prune && vim /tmp/branch-prune && xargs -r git branch -D </tmp/branch-prune"
+alias gfp='git fetch --prune && git pull --prune && gprunelocal'
