@@ -2,7 +2,10 @@ new -s devbox -n 'code'
 splitw -v -p 15 -t 0
 # splitw -h -p 15 -t 1
 # clock-mode -t 2
-neww -d -n 'shell'
+neww -d -n 'code'
+selectw -t 1
+splitw -v -p 15 -t 1
+selectw -t 0
 neww -d -n 'logs'
 neww -d -n 'irc'
 
