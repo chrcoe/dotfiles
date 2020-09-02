@@ -15,7 +15,7 @@ alias ll="ls -alhi"
 alias cleankernels="sudo package-cleanup --oldkernels --count=1"
 
 alias fuc="cat $HOME/.fuc | grep -i"
-alias startvm='VBoxManage startvm "devbox_centos7" --type headless'
-alias stopvm='VBoxManage controlvm "devbox_centos7" poweroff --type headless'
+alias startvm='VBoxManage startvm "devbox" --type headless'
+alias stopvm='VBoxManage controlvm "devbox" poweroff --type headless'
 alias listvm='VBoxManage list runningvms'
-alias sshvm='ssh devbox-centos'
+alias sshvm='ssh devbox'
