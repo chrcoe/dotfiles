@@ -101,4 +101,6 @@ export RVM_DIR="$HOME/.rvm"
 source $RVM_DIR/scripts/rvm
 export PATH="$PATH:$HOME/.rvm/bin"
 umask 077
+export PATH="$PATH:/opt/local/bin:/opt/local/sbin"
+
 
