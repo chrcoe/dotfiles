@@ -5,7 +5,8 @@ atom.symlink/packages
 atom.symlink/storage
 atom.symlink/themes
 
-nvim/config.symlink/configstore
+nvim/config.symlink/*
+!nvim/config.symlink/vim
 
 git/gitconfig.symlink
 
