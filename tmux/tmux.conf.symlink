@@ -92,6 +92,7 @@ source '/usr/local/lib/python2.7/site-packages/powerline/bindings/tmux/powerline
 source '/home/ccoe/.local/lib/python2.7/site-packages/powerline/bindings/tmux/powerline.conf'
 source '/home/chrcoe/.local/lib/python2.7/site-packages/powerline/bindings/tmux/powerline.conf'
 source '/usr/lib/python3.5/site-packages/powerline/bindings/tmux/powerline.conf'
+source '/home/chrcoe/.local/lib/python3.8/site-packages/powerline/bindings/tmux/powerline.conf'
 set-option -g default-terminal "screen-256color"
 
 # Reload tmux config
