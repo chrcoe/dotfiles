@@ -24,3 +24,4 @@ else
     export DEFAULT_USER='chrcoe'
 fi
 
+export KUBECONFIG=$KUBECONFIG:$HOME/.kube/config-canary
